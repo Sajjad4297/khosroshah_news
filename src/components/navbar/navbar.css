@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+    height: 120px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    object-fit: cover;
+}
+
+.search-box {
+    border: solid 1px black;
+    background-color: rgb(2, 2, 175);
+    border-radius: 30px;
+    color: #fff;
+    outline: none;
+    height: 30px;
+    width: 150px;
+}
+
+.search-box::placeholder {
+    color: #fff;
+    padding-right: 10px;
+}
+
+.text-color {
+    color: #fff;
+    text-decoration: none;
+}
+
+.li1 {
+    list-style: none;
+}
+
+.ul1 {
+    display: flex;
+    gap: 10px;
+}
