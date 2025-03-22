@@ -1,0 +1,11 @@
+footer {}
+
+.top-footer {
+    height: 120px;
+    background-color: #404040;
+}
+
+.bottom-footer {
+    height: 240px;
+    background-color: #333333;
+}
