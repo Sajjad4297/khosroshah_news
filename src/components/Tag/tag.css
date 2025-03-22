@@ -1,7 +1,47 @@
 .tag{
-    height: 26px;
-    width: 90px;
+    padding: 5px 10px;
     color: #B3B3B3;
     background-color: #333333;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 900;
+    text-decoration: none;
+    position: relative;
+    margin: 20px;
+}
+.tag::after{
+    width: 0;
+    height: 0;
+    border-left: 18px solid #333;
+    right: -18px;
+    top: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    z-index: 10;
+    display: block;
+    content: "";
+    position: absolute;
+}
+.tag::before{
+    display: block;
+    content: "";
+    position: absolute;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+    width: 5px;
+    height: 5px;
+    background: #666;
+    top: 12.5px;
+    right: -3px;
+    z-index: 11;
+    border-radius: 100%;
+}
+.tag:hover{
+    color: #fff;
+    background-color: #666;
+}
+.tag:hover::after{
+    border-left-color: #666;
+}
+.tag:hover::before{
+    background: #333;
 }

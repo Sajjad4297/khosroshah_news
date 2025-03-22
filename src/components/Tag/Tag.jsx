@@ -1,7 +1,8 @@
 import React from 'react'
 import './tag.css'
-export default function Tag(value) {
+import Link from 'next/link';
+export default function Tag({value}) {
   return (
-    <div className='tag'></div>
+    <Link href='#' className='tag'>{value}</Link>
   )
 }

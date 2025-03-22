@@ -3,6 +3,15 @@ footer {}
 .top-footer {
     height: 120px;
     background-color: #404040;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.top-footer h2 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
 }
 
 .bottom-footer {
