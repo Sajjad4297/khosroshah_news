@@ -1,6 +1,8 @@
 import React from 'react'
 import './footer.css'
 import Tag from '../Tag/Tag'
+import Image from 'next/image'
+import logo from "@/img/logo.png";
 export default function Footer() {
     return (
         <footer>
@@ -20,7 +22,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className='bottom-footer'>
-                <h1></h1>
+                    <Image src={logo} height={100}  />
             </div>
         </footer>
     )
