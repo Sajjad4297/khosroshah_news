@@ -5,25 +5,26 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
+    output   = "./generated/client"
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.sqlite"
+    provider = "sqlite"
+    url      = "file:./dev.sqlite"
 }
-
 
 model Topic {
-    id Int @id @default(autoincrement())
-    title String @unique
-    name String @unique
+    id        Int         @id @default(autoincrement())
+    title     String      @unique
+    name      String      @unique
     sub_topic Sub_Topic[]
 }
+
 model Sub_Topic {
-    id Int @id @default(autoincrement())
-    title String @unique
-    name String @unique
+    id      Int    @id @default(autoincrement())
+    title   String @unique
+    name    String @unique
     topicId Int
-    topic Topic @relation(fields: [topicId], references: [id])
+    topic   Topic  @relation(fields: [topicId], references: [id])
 }
