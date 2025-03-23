@@ -6,15 +6,15 @@
 
 generator client {
     provider = "prisma-client-js"
-    output   = "./generated/client"
 }
 
 datasource db {
-    provider = "sqlite"
-    url      = "file:./dev.sqlite"
+  provider  = "postgresql"
+  url       = "postgresql://postgres.wbxavjprskinnpazqixa:sajjad2005@aws-0-us-east-1.pooler.supabase.com:6543/postgres?pgbouncer=true"
+  directUrl = "postgresql://postgres.wbxavjprskinnpazqixa:sajjad2005@aws-0-us-east-1.pooler.supabase.com:5432/postgres"
 }
 
-model Topic {
+model Topic {postgresql://postgres.jzthiuxaqefjjuhcjrzu:[YOUR-PASSWORD]@aws-0-eu-north-1.pooler.supabase.com:6543/postgres?pgbouncer=true
     id        Int         @id @default(autoincrement())
     title     String      @unique
     name      String      @unique
