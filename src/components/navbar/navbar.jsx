@@ -4,10 +4,10 @@ import Image from 'next/image'
 import logo from '@/img/logo.png'
 import Link from 'next/link'
 import axios from 'axios'
+import NavItem from './NavItem'
 async function getTopics() {
-    const res = await fetch('http://localhost:3000/api/topic');
-    if (!res.ok) throw new Error('Failed to fetch topics');
-    return res.json();
+    const res = await axios('http://localhost:3000/api/topic');
+    return res.data.topics;
   }
 
 export default async function Navbar() {
@@ -19,7 +19,6 @@ export default async function Navbar() {
         href: '/'
     }];
     const topics = await getTopics();
-    console.log(topics)
 
 
     return (
@@ -44,6 +43,7 @@ export default async function Navbar() {
                 </div>
             </div>
             <div className='dropdown'>
+                {topics.map((topic,i) => <NavItem topic={topic} key={i} />)}
 
             </div>
         </header>
