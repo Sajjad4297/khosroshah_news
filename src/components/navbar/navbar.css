@@ -1,10 +1,11 @@
 .container {
     display: flex;
     flex-direction: row;
-    background-color: blue;
     height: 120px;
     justify-content: space-between;
     align-items: center;
+    background: url("../../img/header-overlay.png") blue;
+    background-position: -180px 0;
 }
 
 .logo {
