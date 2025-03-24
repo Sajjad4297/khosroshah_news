@@ -22,7 +22,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className='bottom-footer'>
-                    <Image src={logo} height={100}  />
+                    <Image src={logo} height={100} alt='logo'  />
             </div>
         </footer>
     )

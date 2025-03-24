@@ -1,27 +1,16 @@
-'use server'
 import React from 'react'
 import './navbar.css'
 import Image from 'next/image'
 import logo from '@/img/logo.png'
 import Link from 'next/link'
 import axios from 'axios'
+async function getTopics() {
+    const res = await fetch('http://localhost:3000/api/topic');
+    if (!res.ok) throw new Error('Failed to fetch topics');
+    return res.json();
+  }
 
-export async function getServerSideProps() {
-    try {
-        const res = await axios.get('http://localhost:3000/api/topic'); // Fetch data using Axios
-        const data = res.data; // Axios automatically parses JSON
-        console.log(res)
-        return {
-            props: { data }, // Pass data as props
-        };
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        return {
-            props: { data: null }, // Handle errors gracefully
-        };
-    }
-}
-export default async function Navbar({ data }) {
+export default async function Navbar() {
     const link = [{
         text: 'درباره ما',
         href: '/'
@@ -29,15 +18,15 @@ export default async function Navbar({ data }) {
         text: 'تماس با ما',
         href: '/'
     }];
-
-    console.log(data);
+    const topics = await getTopics();
+    console.log(topics)
 
 
     return (
         <header>
             <div className='container'>
                 <div>
-                    <Image src={logo} width={350} height={120} className='logo' />
+                    <Image src={logo} width={350} height={120} className='logo' alt='logo' />
                 </div>
                 <div>
                     <ul className='ul1'>
