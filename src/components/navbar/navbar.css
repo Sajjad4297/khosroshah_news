@@ -19,11 +19,12 @@
     outline: none;
     height: 30px;
     width: 150px;
+    padding-right: 10px;
 }
 
 .search-box::placeholder {
     color: #fff;
-    padding-right: 10px;
+ 
 }
 
 .text-color {
@@ -39,3 +40,28 @@
     display: flex;
     gap: 10px;
 }
+.dropdown{
+    width: 100%;
+    background-color: black;
+    height: 40px;
+    color: #fff;
+    display: flex;
+    /* padding: 10px 20px 10px; */
+    justify-content: space-around;
+}
+
+.dropdown {
+    position: relative;
+  }
+  
+  .dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
