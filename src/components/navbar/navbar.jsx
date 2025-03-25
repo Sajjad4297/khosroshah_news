@@ -6,7 +6,7 @@ import Link from 'next/link'
 import axios from 'axios'
 import NavItem from './NavItem'
 async function getTopics() {
-    const res = await axios('https://khosroshah-news.vercel.app/api/topic');
+    const res = await axios('http://localhost:3000/api/topic');
     return res.data.topics;
   }
 export default async function Navbar() {
