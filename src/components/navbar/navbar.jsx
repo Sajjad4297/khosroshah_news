@@ -9,7 +9,6 @@ async function getTopics() {
     const res = await axios('https://khosroshah-news.vercel.app/api/topic');
     return res.data.topics;
   }
-
 export default async function Navbar() {
     const link = [{
         text: 'درباره ما',
