@@ -10,6 +10,13 @@ async function getTopics() {
     return res.data.topics;
   }
 export default async function Navbar() {
+    const link = [{
+        text: 'درباره ما',
+        href: '/'
+    }, {
+        text: 'تماس با ما',
+        href: '/'
+    }];
     const topics = await getTopics();
 
 
