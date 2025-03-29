@@ -9,7 +9,7 @@ export async function GET(request) {
     });
     return NextResponse.json({topics}, { status: 201 })
 
-    
+
 }
 export async function POST(request) {
     const body = await request.json();

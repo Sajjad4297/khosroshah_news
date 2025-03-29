@@ -9,7 +9,7 @@ export default function NavItem({ topic }) {
             {topic.title}
             <div className="drop-down">
                 {topic.sub_topic.map((sub_topic, i) => (
-                    <p>
+                    <p key={i}>
                         <Link href={sub_topic.name} className='text-color'>{sub_topic.title}</Link>
                     </p>
 

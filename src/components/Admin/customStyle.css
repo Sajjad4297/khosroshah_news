@@ -1,0 +1,17 @@
+.avatar-uploader .ant-upload {
+    width: 800px !important;
+    height: 450px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .avatar-uploader .ant-upload img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+.ant-input-data-count{
+    bottom: -2px !important;
+    left: 10px   !important;
+}
