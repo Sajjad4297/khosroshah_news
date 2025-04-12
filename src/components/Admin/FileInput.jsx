@@ -18,18 +18,31 @@ const beforeUpload = file => {
   }
   return isJpgOrPng && isLt2M;
 };
-const FileInput = ({setInputData}) => {
+const FileInput = ({setImage}) => {
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState();
-  const handleChange = info => {
-    setInputData(prevState=>({...prevState,image :info.file}));
-    if (info.file.status === 'uploading') {
+  const handleChange = (e) => {
+    setImage(e.file.originFileObj);
+    if (e.file.status === 'uploading') {
       setLoading(true);
       return;
     }
-    if (info.file.status === 'done') {
-      // Get this url from response in real world.
-      getBase64(info.file.originFileObj, url => {
+    if (e.file.status === 'done') {
+        const handleChange = (e) => {
+            // Use originFileObj which is a native File object
+            setImage(e.file.originFileObj);
+            if (e.file.status === 'uploading') {
+              setLoading(true);
+              return;
+            }
+            if (e.file.status === 'done') {
+              // Get a base64 preview to display
+              getBase64(e.file.originFileObj, url => {
+                setLoading(false);
+                setImageUrl(url);
+              });
+            }
+          };      getBase64(e.file.originFileObj, url => {
         setLoading(false);
         setImageUrl(url);
       });

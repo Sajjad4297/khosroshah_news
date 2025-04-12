@@ -6,26 +6,26 @@ import TextInputs from "@/components/Admin/TextInputs";
 import Button from "@/components/Admin/Button";
 import './addNews.css'
 export default function page() {
-    const [inputData , setInputData] = useState()
+    const [inputData , setInputData] = useState({})
+    const [image , setImage] = useState({})
     const handleSubmit = async () => {
         const formData = new FormData();
-        formData.append("image", inputData.image);
+        formData.append("image", image , image.name);
         formData.append('title', inputData.title);
         formData.append('description', inputData.description);
-
+        console.log(inputData)
+        console.log(image)
         const res = await fetch("/api/add-news", {
             method: "POST",
             body: formData,
-            headers: {
-                "Content-Type": "multipart/form-data",
-            },
-          }).then((res) =>res.json()).then((data) => console.log(data));
+
+          }).then((res) =>res.json()).then((res) => console.log(res));
 
         // Handle form submission logic here
     }
   return (
     <div className='add-news-container'>
-        <FileInput inputData={inputData} setInputData={setInputData} />
+        <FileInput setImage={setImage} setInputData={setInputData} />
         <br />
         <TextInputs inputData={inputData} setInputData={setInputData}  />
         <br />
