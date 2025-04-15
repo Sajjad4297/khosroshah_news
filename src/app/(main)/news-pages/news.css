@@ -1,0 +1,283 @@
+.container-news {
+  display: flex;
+  padding: 20px 30px;
+}
+
+.right-news {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px dashed hsl(0, 0%, 80%);
+
+}
+
+.ul-icon {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ul-icon li {
+  list-style: none;
+}
+
+.ul-icon li a {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  z-index: 1;
+}
+
+.ul-icon li a .icon {
+  position: relative;
+  color: #262626;
+  transition: .5s;
+  z-index: 3;
+}
+
+.ul-icon li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.ul-icon li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: .5s;
+  z-index: 2;
+}
+
+.ul-icon li a:hover:before {
+  top: 0;
+}
+
+.ul-icon li:nth-child(1) a:before {
+  background: #3b5999;
+}
+
+.ul-icon li:nth-child(2) a:before {
+  background: #ee4e43;
+}
+
+ul li:nth-child(3) a:before {
+  background: #0077b5;
+}
+
+.right-page {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right-page h1 {
+  width: 640px;
+}
+
+.text {
+  text-align: justify;
+}
+
+.right-page p {
+  width: 615px;
+}
+
+.sumarry {
+  display: flex;
+  flex-direction: column;
+}
+
+.sumarry-children {
+  background-color: #efefef;
+  width: 620px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  top: 0;
+}
+
+.sumarry-children p {
+  width: 620px;
+  font-size: 0.8rem;
+}
+
+.children-other-tags {
+  border-bottom: 2px solid blue;
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.other-tags-title {
+  position: absolute;
+  text-decoration: none;
+  top: -20px;
+  color: blue;
+  background-color: #fff;
+  padding: 0 10px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.ul-tags {
+  display: flex;
+  gap: 13px;
+  flex-wrap: wrap;
+  max-width: 640px;
+}
+
+.tags {
+  background-color: #e9ecef;
+  padding: 5px;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #3b3b3b;
+}
+
+.tags:hover {
+  background-color: rgb(12, 12, 249);
+  color: #fff;
+  transition: 0.4s;
+}
+
+.texts {
+  padding-right: 30px;
+}
+
+.form1 {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.input-wrapper {
+  flex: 1;
+}
+
+.form-group {
+  position: relative;
+  width: 92%;
+}
+
+.form1 input {
+  border: 1px solid #ccc;
+  padding: 14px 14px 6px 14px;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  width: 100%;
+  font-size: 16px;
+}
+
+.form1 input:focus {
+  border-color: #420dbd;
+}
+
+.form1 input:focus + label,
+.form1 input:valid + label {
+  top: -8px;
+  right: 12px;
+  font-size: 12px;
+  color: #420dbd;
+}
+
+.form1 label {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  background: white;
+  padding: 0 4px;
+  color: #929496;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  font-size: 14px;
+}
+.form2 {
+  padding: 10px;
+}
+
+.input-wrapper2 {
+  width: 96%;
+}
+
+.form-group2 {
+  position: relative;
+  width: 100%;
+ 
+}
+
+.form2 input {
+  border: 1px solid #ccc;
+  padding: 14px 14px 6px 14px;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  width: 100%;
+  height: 80px;
+  font-size: 16px;
+}
+
+.form2 input:focus {
+  border-color: #420dbd;
+}
+
+.form2 input:focus + label,
+.form2 input:valid + label {
+  top: -8px;
+  right: 12px;
+  font-size: 12px;
+  color: #420dbd;
+}
+
+.form2 label {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  background: white;
+  padding: 0 4px;
+  color: #929496;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  font-size: 14px;
+}
+.captcha{
+  padding: 10px;
+  font-size: 0.8rem;
+}
+.send{
+  display: flex;
+  padding: 10px;
+  justify-content: end;
+}
+.send button{
+  border: none;
+  background-color: #003db9;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius:5px;
+  cursor: pointer;
+}
