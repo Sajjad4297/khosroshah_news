@@ -5,11 +5,12 @@
 
 .main {
   display: flex;
-  padding: 30px 0;
+  padding: 0 0;
 }
 
 .right-main {
   display: flex;
+  padding-bottom: 10px;
   gap: 20px;
   border-bottom: 2px hsl(0, 0%, 70%) solid;
 }
@@ -50,11 +51,12 @@
 }
 
 .top-main {
+  padding-top: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 900px;
-  gap: 50px;
+  gap: 35px;
 }
 
 .top-main a {
@@ -141,6 +143,7 @@
 }
 
 .Other-important-news {
+  width: 820px;
   border-bottom: 2px solid blue;
   position: relative;
   margin-top: 50px;
@@ -165,6 +168,7 @@
 }
 
 .news {
+  width: 820px;
   display: flex;
   gap: 50px;
   border-bottom: 2px hsl(0, 0%, 80%) dotted;
@@ -187,7 +191,7 @@
 }
 
 .news p {
-  width: 700px;
+  width: 600px;
   opacity: 0.7;
 }
 

@@ -69,7 +69,7 @@ export default function page() {
                     <div className='text'>{formatTextWithSpacing(content)}</div>
                     <div >
                         <div className='children-other-tags'>
-                            <Link href="/#" className='other-tags-title'>برچسب‌ها</Link>
+                            <span className='other-tags-title'>برچسب‌ها</span>
                         </div>
                         <div>
                             <ul className='ul-tags'>
@@ -83,7 +83,7 @@ export default function page() {
                     </div>
                     <div>
                         <div className='children-other-tags'>
-                            <Link href="/#" className='other-tags-title'>نظر شما</Link>
+                            <span className='other-tags-title'>نظر شما</span>
                         </div>
                         <div className='texts'>
                             <ul>

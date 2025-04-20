@@ -3,7 +3,7 @@ import './navbar.css'
 import Image from 'next/image'
 import logo from '@/img/logo.png'
 import Link from 'next/link'
-import axios from 'axios'
+
 import NavItem from './NavItem'
 // async function getTopics() {
 //     const res = await axios('http://localhost:3000/api/topics');
