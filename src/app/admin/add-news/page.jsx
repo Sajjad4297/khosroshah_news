@@ -12,13 +12,12 @@ export default function page() {
         const formData = new FormData();
         formData.append("image", image , image.name);
         formData.append('title', inputData.title);
-        formData.append('description', inputData.description);
+        formData.append('content', inputData.description);
         console.log(inputData)
         console.log(image)
-        const res = await fetch("/api/add-news", {
+        const res = await fetch("https://news.sajy.ir/api/news", {
             method: "POST",
             body: formData,
-
           }).then((res) =>res.json()).then((res) => console.log(res));
 
         // Handle form submission logic here
