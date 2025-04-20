@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "./Home.css";
 import img from '@/img/slm.png';
+import OtherImportantNews from "./components/OtherImportantNews";
 
 export default function Home() {
   return (
@@ -31,7 +32,7 @@ export default function Home() {
         <div className="main-2">
           <div className="top-main">
             {[...Array(6)].map((_, index) => (
-              <Link href={`/news/${index + 3}`} key={index} className="children-title">
+              <Link href="/news-pages" key={index} className="children-title">
                 <Image src={img} width={250} height={150} alt="تصویر خبر" />
                 <h3 className="title">
                   <p >رهبر انصارالله: ایران نقش محوری در حمایت از فلسطین دارد</p>
@@ -82,9 +83,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="Other-important-news">
-            <Link href="/important-news" className="Other-important-news-title">سایر اخبار مهم</Link>
-          </div>
+          <OtherImportantNews />
 
           <div className="other-news">
             {[...Array(6)].map((_, index) => (
