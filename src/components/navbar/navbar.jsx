@@ -12,10 +12,10 @@ import NavItem from './NavItem'
 export default async function Navbar() {
     const link = [{
         text: 'درباره ما',
-        href: '/'
+        href: '/about'
     }, {
         text: 'تماس با ما',
-        href: '/'
+        href: '/call'
     }];
     
     const topics = [

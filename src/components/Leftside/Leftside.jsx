@@ -31,7 +31,10 @@ export default function Leftside() {
                 </div>
             </div>
             <div>
-                <BoxList />
+                <BoxList tagTitle = "تازه‌ترین اخبار" />
+            </div>
+            <div>
+                <BoxList tagTitle = "پربازدیدترین ها" />
             </div>
         </div>
     );
