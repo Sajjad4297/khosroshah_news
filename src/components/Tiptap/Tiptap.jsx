@@ -1,7 +1,6 @@
 'use client'
 
-import { EditorContent } from '@tiptap/react'
-import { Editor } from '@tiptap/core'
+import { EditorContent, useEditor } from '@tiptap/react'
 import Document from '@tiptap/extension-document'
 import Highlight from '@tiptap/extension-highlight'
 import Paragraph from '@tiptap/extension-paragraph'
@@ -17,9 +16,7 @@ const Tiptap = ({setInputData}) => {
     const handleChange = () => {
     }
 
-
-    const editor = new Editor({
-        // register extensions
+    const editor = useEditor({
         extensions: [
             Document,
             Paragraph,
@@ -31,16 +28,18 @@ const Tiptap = ({setInputData}) => {
             Link,
             History.configure({
                 newGroupDelay: 500,
-              })
-
-              ,
+            }),
             Placeholder.configure({
                 placeholder: 'متن خبر',
             }),
         ],
         onUpdate: handleChange,
-
     })
+
+    if (!editor) {
+        return null;
+    }
+
     return (
         <div className='tiptap-editor'>
             <div className='tiptap-control'>
