@@ -98,24 +98,24 @@ export default function page() {
                         </div>
                         <div>
                             <form action="">
-                                <div class="form1">
-                                    <div class="input-wrapper">
-                                        <div class="form-group">
+                                <div className="form1">
+                                    <div className="input-wrapper">
+                                        <div className="form-group">
                                             <input type="text" required />
                                             <label>نام</label>
                                         </div>
                                     </div>
 
-                                    <div class="input-wrapper">
-                                        <div class="form-group">
+                                    <div className="input-wrapper">
+                                        <div className="form-group">
                                             <input type="email" required />
                                             <label>ایمیل</label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form2">
-                                    <div class="input-wrapper2">
-                                        <div class="form-group2">
+                                <div className="form2">
+                                    <div className="input-wrapper2">
+                                        <div className="form-group2">
                                             <input type="text" required />
                                             <label>نظر شما</label>
                                         </div>
