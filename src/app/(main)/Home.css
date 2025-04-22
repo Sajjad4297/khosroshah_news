@@ -80,6 +80,8 @@
 
 .container-news {
   height: 210px;
+  display: flex;
+  flex-direction: column;
 }
 
 .Most-viewed-news a {

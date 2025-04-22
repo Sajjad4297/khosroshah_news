@@ -57,6 +57,7 @@ export default function page() {
                     </div>
                 </div>
                 <div className='right-page'>
+                    <li> وزیر تعاون، کار و رفاه اجتماعی:</li>
                     <h1>توقیف یک فروند شناور حامل سوخت قاچاق توسط نیروی دریایی سپاه</h1>
                     <div className='sumarry'>
                         <Image src={img} width={620} height={413} alt='aks' />

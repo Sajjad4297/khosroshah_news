@@ -1,6 +1,6 @@
 .container-news {
   display: flex;
-  padding: 0 70px;
+  
 }
 
 .right-news {
@@ -100,7 +100,7 @@ ul li:nth-child(3) a:before {
   text-align: justify;
 }
 
-.right-page p {
+.text {
   width: 615px;
 }
 
