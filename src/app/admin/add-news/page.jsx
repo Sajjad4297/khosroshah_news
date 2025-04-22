@@ -5,6 +5,7 @@ import FileInput from "@/components/Admin/FileInput";
 import TextInputs from "@/components/Admin/TextInputs";
 import Button from "@/components/Admin/Button";
 import './addNews.css'
+import Tiptap from '@/components/Tiptap/Tiptap';
 export default function page() {
     const [inputData , setInputData] = useState({})
     const [image , setImage] = useState({})
@@ -12,7 +13,7 @@ export default function page() {
         const formData = new FormData();
         formData.append("image", image , image.name);
         formData.append('title', inputData.title);
-        formData.append('content', inputData.description);
+        formData.append('content', inputData.content);
         console.log(inputData)
         console.log(image)
         const res = await fetch("https://news.sajy.ir/api/news", {
@@ -26,7 +27,9 @@ export default function page() {
     <div className='add-news-container'>
         <FileInput setImage={setImage} setInputData={setInputData} />
         <br />
-        <TextInputs inputData={inputData} setInputData={setInputData}  />
+        <TextInputs  setInputData={setInputData}  />
+        <br />
+        <Tiptap setInputData={setInputData} />
         <br />
         <Button handleSubmit={handleSubmit} />
     </div>
