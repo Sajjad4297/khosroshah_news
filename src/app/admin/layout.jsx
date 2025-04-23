@@ -24,6 +24,7 @@ function getItem(label, key, icon, children) {
 const items = [
   getItem('News', '/admin', <PieChartOutlined />),
   getItem('Add News', '/admin/add-news', <PlusCircleOutlined style={{fontSize:17}} />),
+  getItem('Add Tags', '/admin/add-tags', <PlusCircleOutlined style={{fontSize:17}} />),
   getItem('Add News', 'sub1', <UserOutlined />, [
     getItem('Tom', '3'),
     getItem('Bill', '4'),

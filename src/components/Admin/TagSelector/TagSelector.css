@@ -1,0 +1,62 @@
+/* components/TagSelector.css */
+
+.tag-selector {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    font-family: sans-serif;
+  }
+
+  .selected-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 8px;
+  }
+
+  .tag-admin {
+    background-color: #eee;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .remove-btn {
+    background: none;
+    border: none;
+    color: red;
+    font-weight: bold;
+    margin-left: 6px;
+    cursor: pointer;
+  }
+
+  .tag-input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .tag-dropdown {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-height: 150px;
+    margin-top: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+
+  .tag-dropdown-item {
+    padding: 8px 10px;
+    background-color: #aaa;
+    cursor: pointer;
+  }
+
+  .dropdown-item:hover {
+    background-color: #f0f0f0;
+  }

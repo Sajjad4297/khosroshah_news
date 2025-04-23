@@ -1,0 +1,23 @@
+/* components/TopicSelector.module.css */
+.wrapper {
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .topicBlock {
+    padding: 10px;
+    border-radius: 6px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .subTopics {
+    margin-top: 10px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
