@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import './TagSelector.css'; // Import the CSS
 let allTags;
-fetch("http://localhost:5000/api/tags", {
+fetch("https://news.sajy.ir/api/tags", {
     method: "GET",
 }).then((res) => res.json()).then(res => { allTags = res.data});
 

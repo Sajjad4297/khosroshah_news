@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import styles from './TopicSelector.module.css';
 let topicsData;
-fetch('http://localhost:5000/api/topics').then(res => res.json()).then(res => topicsData = res.data);
+fetch('https://news.sajy.ir/api/topics').then(res => res.json()).then(res => topicsData = res.data);
 // const topicsData = [
 //   {
 //     topic: 'Technology',
