@@ -1,17 +1,22 @@
 // components/TagSelector.js
 'use client'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './TagSelector.css'; // Import the CSS
-let allTags;
-fetch("https://news.sajy.ir/api/tags", {
-    method: "GET",
-}).then((res) => res.json()).then(res => { allTags = res.data});
-
-//const allTags = ["JavaScript", "Node.js", "React", "CSS", "HTML", "Express", "MongoDB", "Next.js", "Tailwind"];
 
 export default function TagSelector({ selected = [], onChange }) {
     const [input, setInput] = useState('');
     const [selectedTags, setSelectedTags] = useState(selected);
+    const [allTags, setAllTags] = useState([]);
+
+    useEffect(() => {
+        fetch("https://news.sajy.ir/api/tags", {
+            method: "GET",
+        })
+        .then((res) => res.json())
+        .then(res => setAllTags(res.data))
+        .catch(err => console.error('Error fetching tags:', err));
+    }, []);
+
     const filteredTags = allTags?.filter(
         tag =>
             tag.title.includes(input) &&

@@ -11,8 +11,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en" dir="rtl">
-            <body>
+        <html lang="en" dir="rtl" suppressHydrationWarning>
+            <body suppressHydrationWarning>
             <AntdRegistry>{children}</AntdRegistry>
             </body>
         </html>

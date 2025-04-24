@@ -35,7 +35,7 @@ export default function page() {
         formData.append('title', inputData.title);
         formData.append('name', inputData.name);
         console.log(inputData.title)
-        const res = await fetch("http://localhost:5000/api/tags", {
+        const res = await fetch("https://news.sajy.ir/api/tags", {
             method: "POST",
             body: formData,
         }).then((res) => res.json()).then((res) => console.log(res));

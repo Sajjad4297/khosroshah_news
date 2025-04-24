@@ -1,8 +1,7 @@
+'use client'
 // components/TopicSelector.js
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './TopicSelector.module.css';
-let topicsData;
-fetch('https://news.sajy.ir/api/topics').then(res => res.json()).then(res => topicsData = res.data);
 // const topicsData = [
 //   {
 //     topic: 'Technology',
@@ -17,6 +16,15 @@ fetch('https://news.sajy.ir/api/topics').then(res => res.json()).then(res => top
 export default function TopicSelector() {
     const [selectedTopics, setSelectedTopics] = useState({});
     const [selectedSubTopics, setSelectedSubTopics] = useState({});
+    const [topicsData, setTopicsData] = useState();
+    useEffect(() => {
+        fetch("https://news.sajy.ir/api/topics", {
+            method: "GET",
+        })
+            .then((res) => res.json())
+            .then(res => setTopicsData(res.data))
+            .catch(err => console.error('Error fetching tags:', err));
+    }, []);
 
     const toggleTopic = (topic) => {
         const newValue = !selectedTopics[topic];
@@ -24,7 +32,7 @@ export default function TopicSelector() {
             ...prev,
             [topic]: newValue,
         }));
-        console.log(selectedTopics,selectedSubTopics)
+        console.log(selectedTopics, selectedSubTopics)
         // Optional: Clear sub-topics when topic is deselected
         if (!newValue) {
             const updatedSubTopics = { ...selectedSubTopics };
@@ -55,7 +63,7 @@ export default function TopicSelector() {
                         {title}
                     </label>
 
-                    <div className={styles.subTopics} style={{height: selectedTopics[id] ? 'auto' : 0, overflow: 'hidden', transition: 'height 0.3s ease'}}>
+                    <div className={styles.subTopics} style={{ height: selectedTopics[id] ? 'auto' : 0, overflow: 'hidden', transition: 'height 0.3s ease' }}>
                         {subTopics.map((sub) => (
                             <label key={sub.id} style={{ marginRight: '10px', display: 'flex', alignItems: 'center' }}>
                                 <input
