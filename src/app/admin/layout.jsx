@@ -2,7 +2,7 @@
 import '@/Styles/Font/font.css';
 import '@/components/Admin/customStyle.css';
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter,usePathname  } from 'next/navigation';
 import {
   DesktopOutlined,
   FileOutlined,
@@ -34,6 +34,7 @@ const items = [
 
 export default function AdminLayout({ children }) {
     const router = useRouter();
+    const pathName = usePathname()
     const [collapsed, setCollapsed] = useState(false);
     const {
       token: { colorBgContainer, borderRadiusLG },
@@ -48,11 +49,12 @@ export default function AdminLayout({ children }) {
     const handleMenuClick = ({ key }) => {
         router.push(key);
     };
+    console.log(pathName)
     return (
         <Layout style={{ minHeight: '100vh' }}>
           <Sider collapsible collapsed={collapsed} reverseArrow={true} onCollapse={value => setCollapsed(value)}>
             <div className="demo-logo-vertical" />
-            <Menu theme="dark" defaultSelectedKeys={['/admin']} mode="inline" items={items} onClick={handleMenuClick} />
+            <Menu theme="dark" defaultSelectedKeys={pathName} mode="inline" items={items} onClick={handleMenuClick} />
           </Sider>
           <Layout>
             <Header style={{ padding: 0, background: colorBgContainer }} />
