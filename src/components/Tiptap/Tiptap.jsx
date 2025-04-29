@@ -14,6 +14,11 @@ import History from '@tiptap/extension-history'
 
 const Tiptap = ({setInputData}) => {
     const handleChange = () => {
+        setInputData(prevState => ({
+            ...prevState,
+            content: editor.getHTML(),
+        })
+        )
     }
 
     const editor = useEditor({
@@ -33,6 +38,7 @@ const Tiptap = ({setInputData}) => {
                 placeholder: 'متن خبر',
             }),
         ],
+        immediatelyRender:false,
         onUpdate: handleChange,
     })
 
