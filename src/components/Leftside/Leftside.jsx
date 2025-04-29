@@ -16,7 +16,7 @@ export default function Leftside() {
         <div className='container-leftside'>
             <div className='box-list'>
                 <div className='title-box-list'>
-                    <Link href="/##">
+                    <Link href="/archive">
                         <h3>انتخاب سردبير</h3>
                     </Link>
                 </div>

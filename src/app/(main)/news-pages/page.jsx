@@ -3,9 +3,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import img from '@/img/slm.png';
 import './news.css'
-import { FaTelegramPlane, FaInstagram, FaTwitter, } from 'react-icons/fa';
-import { formatTextWithSpacing } from './content';
+import { FaTelegramPlane, FaInstagram, FaTwitter, FaFacebook, } from 'react-icons/fa';
+// import { formatTextWithSpacing } from './content';
 import Tags from '../components/Tags';
+import CopyButton from './CopyButton';
 
 
 const content = `به گزارش خبرگزاری مهر، مجتبی قهرمانی رئیس کل دادگستری هرمزگان با اعلام این خبر، اظهار کرد: با هماهنگی دادستان عمومی و انقلاب شهرستان قشم، رزمندگان نیروی دریایی سپاه پس از شناسایی یک فروند شناور حامل سوخت قاچاق در آب‌های خلیج فارس و حدفاصل جزایر لارک و قشم، نسبت به توقیف آن اقدام کردند.
@@ -18,7 +19,7 @@ const content = `به گزارش خبرگزاری مهر، مجتبی قهرما
 
 رئیس کل دادگستری هرمزگان همچنین با اشاره به اینکه پرونده شناور مذکور در سیر مراحل رسیدگی قضائی قرار دارد، تأکید کرد: دادگستری استان با همکاری ضابطین، راهبرد مقابله با قاچاق سازمان یافته سوخت را با قاطعیت ادامه می‌دهد و در راستای صیانت از منافع و سرمایه‌های ملت ایران لحظه‌ای درنگ نخواهد کرد.`;
 
-
+const link = 'mehrnews.com/x37Msx'
 export default function page() {
     return (
         <div className='container-news'>
@@ -48,7 +49,14 @@ export default function page() {
                             <li>
                                 <Link href="#">
                                     <i className='icon'>
-                                        <FaTwitter />
+                                        <FaTwitter size={24} />
+                                    </i>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="#">
+                                    <i className='icon'>
+                                        <FaFacebook size={24} />
                                     </i>
                                 </Link>
                             </li>
@@ -67,7 +75,40 @@ export default function page() {
                             </p>
                         </div>
                     </div>
-                    <div className='text'>{formatTextWithSpacing(content)}</div>
+                    <div>
+                        <div className='text'>
+                            <p>{content}</p>
+                            <p className='news-code'>کد خبر 6442937</p>
+                        </div>
+                        <div className='end-text'>
+                            <ul className='icon-links'>
+                                <li>
+                                    <Link href="#">
+                                    <FaTelegramPlane size={25} className='telegram' />
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="#">
+                                    <FaInstagram size={25} className='instagram' />
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="#">
+                                    <FaFacebook size={25} />
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="#">
+                                    <FaTwitter size={25} className='twitter' />
+                                    </Link>
+                                </li>
+                            </ul>
+                            <div className='short-link'>
+                            <CopyButton text={link}/>
+                            <Link href="/" className='text-short-link'>{link}</Link>
+                            </div>
+                        </div>
+                    </div>
                     <div >
                         <div className='children-other-tags'>
                             <span className='other-tags-title'>برچسب‌ها</span>
@@ -96,7 +137,7 @@ export default function page() {
                                 </li>
                             </ul>
                         </div>
-                        <div>
+                        <div className=''>
                             <form action="">
                                 <div className="form1">
                                     <div className="input-wrapper">
@@ -133,9 +174,6 @@ export default function page() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className='left-news'>
-
             </div>
         </div>
     )

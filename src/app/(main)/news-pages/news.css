@@ -1,6 +1,5 @@
 .container-news {
-  display: flex;
-  
+  width: 620px;
 }
 
 .right-news {
@@ -10,7 +9,7 @@
 
 .right-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   border-bottom: 2px dashed hsl(0, 0%, 80%);
 
@@ -18,11 +17,6 @@
 
 .ul-icon {
   display: flex;
-  margin-top: 30px;
-  margin-left: 80px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .ul-icon li {
@@ -91,17 +85,14 @@ ul li:nth-child(3) a:before {
   flex-direction: column;
   gap: 20px;
 }
-
-.right-page h1 {
-  width: 640px;
-}
-
 .text {
   text-align: justify;
+  border-bottom: 1px solid hsl(0, 0%, 80%);
+  padding-bottom: 20px;
 }
-
-.text {
-  width: 615px;
+.news-code{
+  padding-top: 25px;
+  opacity: 0.5;
 }
 
 .sumarry {
@@ -111,12 +102,30 @@ ul li:nth-child(3) a:before {
 
 .sumarry-children {
   background-color: #efefef;
-  width: 620px;
-  height: 80px;
+  padding: 20px;
   display: flex;
   align-items: center;
   text-align: center;
   top: 0;
+}
+.end-text{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+.icon-links{
+  display: flex;
+  gap: 25px;
+}
+.icon-links li{
+  text-decoration: none;
+  list-style: none;
+}
+.telegram{
+  color: #003db9;
+}
+.instagram{
+  color: #f00;
 }
 
 .sumarry-children p {
@@ -279,4 +288,19 @@ ul li:nth-child(3) a:before {
   padding: 10px 20px;
   border-radius:5px;
   cursor: pointer;
+}
+.short-link{
+  background-color: #fff;
+}
+.text-short-link{
+  padding: 10px 10px;
+  color: #3b3b3b;
+}
+.copy-button{
+  background-color: #d7d7d7;
+  color: #3b3b3b;
+  padding: 5px 5px;
+  border-radius:5px;
+  cursor: pointer;
+  border: none;
 }

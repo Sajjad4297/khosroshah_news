@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import './footer.css'
 import Tag from '../Tag/Tag'

@@ -3,8 +3,19 @@ import Link from "next/link";
 import "./Home.css";
 import img from '@/img/slm.png';
 import OtherImportantNews from "./components/OtherImportantNews";
+import ImageSlider from "./ImageSlider";
+import { Slider } from "antd";
+import img1 from '@/img/slm.png';
+import img2 from '@/img/slm.png';
+import img3 from '@/img/slm.png';
+
 
 export default function Home() {
+  const slides = [
+    { img: img1, title: 'دیدار فرماندهان با رهبری' },
+    { img: img2, title: 'مراسم دفاع مقدس' },
+    { img: img3, title: 'افتتاح پروژه‌های نظامی' },
+  ];
   return (
     <div className="Home-page">
       <div className="right-page">
@@ -57,14 +68,14 @@ export default function Home() {
                     شهرام دبیری از سمت معاونت پارلمانی رئیس‌جمهور برکنار شد
                   </Link>
                 </div>
-                <div className="children-Most-viewed-news-top2">
+                <div className="children-Most-viewed-news-top">
                   <Link href="#">
                     شهرام دبیری از سمت معاونت پارلمانی رئیس‌جمهور برکنار شد
                   </Link>
                 </div>
               </div>
               <div className="Most-viewed-news-bot">
-              <div className="children-Most-viewed-news-top">
+                <div className="children-Most-viewed-news-top">
                   <Link href="#">
                     شهرام دبیری از سمت معاونت پارلمانی رئیس‌جمهور برکنار شد
                   </Link>
@@ -74,7 +85,7 @@ export default function Home() {
                     شهرام دبیری از سمت معاونت پارلمانی رئیس‌جمهور برکنار شد
                   </Link>
                 </div>
-                <div className="children-Most-viewed-news-top2">
+                <div className="children-Most-viewed-news-top">
                   <Link href="#">
                     شهرام دبیری از سمت معاونت پارلمانی رئیس‌جمهور برکنار شد
                   </Link>
@@ -101,6 +112,45 @@ export default function Home() {
                 </Link>
               </div>
             ))}
+          </div>
+          <div className="photo-news">
+            <div className="photo">
+              <OtherImportantNews text="تصاوير" href="/important-news" className="Other-important-news" />
+              <div className="photo-img">
+                <Link href="#" className="slider">
+                  <ImageSlider slides={slides}/>
+                </Link>
+              </div>
+            </div>
+            <div className="video">
+              <OtherImportantNews text="بیننده" href="/important-news" className="Other-important-news video" />
+              <div className="photo-video">
+                <div className="photo-item">
+                  <Image src={img} width="50%" height={100} alt="تصویر خبر" />
+                  <p className="title">عنوان اول</p>
+                </div>
+                <div className="photo-item">
+                  <Image src={img} width="50%" height={100} alt="تصویر خبر" />
+                  <p className="title">عنوان دوم</p>
+                </div>
+                <div className="photo-item">
+                  <Image src={img} width="50%" height={100} alt="تصویر خبر" />
+                  <p className="title">عنوان سوم</p>
+                </div>
+                <div className="photo-item">
+                  <Image src={img} width="50%" height={100} alt="تصویر خبر" />
+                  <p className="title">عنوان سوم</p>
+                </div>
+                <div className="photo-item">
+                  <Image src={img} width="50%" height={100} alt="تصویر خبر" />
+                  <p className="title">عنوان سوم</p>
+                </div>
+                <div className="photo-item">
+                  <Image src={img} width="50%" height={100} alt="تصویر خبر" />
+                  <p className="title">عنوان سوم</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
