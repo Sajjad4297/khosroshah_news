@@ -25,7 +25,12 @@ export default function Navbar() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const topics = [
-    // قبلی‌ها همونطور که بودن
+    {
+      "id": 0,
+      "title": "خانه",
+      "name": "/",
+      "sub_topic": []
+    },
     {
       "id": 1,
       "title": "سیاسی",
@@ -107,23 +112,22 @@ export default function Navbar() {
         { "id": 39, "title": "فناوری‌های نوین", "name": "newtechnologies", "topicId": 6 }
       ]
     },
-    // اضافه شده‌ها از اینجا:
     {
       "id": 7,
       "title": "عکس",
-      "name": "photo",
+      "name": "galery",
       "sub_topic": []
     },
     {
       "id": 8,
       "title": "فیلم",
-      "name": "video",
+      "name": "media",
       "sub_topic": []
     },
     {
       "id": 9,
       "title": "صدای مخاطب",
-      "name": "user-voice",
+      "name": "audience",
       "sub_topic": []
     },
     {

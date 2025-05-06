@@ -20,24 +20,23 @@ export default function Home() {
     <div className="Home-page">
       <div className="right-page">
         <div className='main'>
-          <div className='right-main'>
+          <Link href="/news-pages" className='right-main'>
             <div className='img-side'>
-              <Link href="/news/1">
-                <Image src={img} width={400} height={250} alt="تصویر خبر" />
-              </Link>
+              <Image src={img} width={400} height={250} alt="تصویر خبر" />
             </div>
             <div className='text-side'>
               <p className="p">رضا شاه :</p>
               <h3 className="title">
-                <Link href="/news/2" className="children-title">
+                <span className="children-title">
                   راهپیمایی امسال یکی از باعزت‌ترین راهپیمایی‌های روز قدس خواهد بود
-                </Link>
+                </span>
               </h3>
               <p className="discriptions">
                 رهبر معظم انقلاب اسلامی فرمودند: إن‌شاءالله راهپیمایی امسال، یکی از بهترین، پرشکوه‌ترین و باعزت‌ترین راهپیمایی‌های روز قدس خواهد بود.
               </p>
             </div>
-          </div>
+          </Link>
+
         </div>
 
         <div className="main-2">
@@ -118,7 +117,7 @@ export default function Home() {
               <OtherImportantNews text="تصاوير" href="/important-news" className="Other-important-news" />
               <div className="photo-img">
                 <Link href="#" className="slider">
-                  <ImageSlider slides={slides}/>
+                  <ImageSlider slides={slides} />
                 </Link>
               </div>
             </div>

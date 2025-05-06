@@ -13,7 +13,12 @@
   padding-bottom: 10px;
   gap: 20px;
   border-bottom: 2px hsl(0, 0%, 70%) solid;
+  text-decoration: none;
 }
+.right-main:hover .children-title {
+  color: blue;
+}
+
 
 .text-side {
   display: flex;
@@ -23,6 +28,7 @@
 
 .p {
   opacity: 0.5;
+  color: black;
 }
 
 .title {
@@ -34,13 +40,10 @@
   color: black;
 }
 
-.children-title:hover {
-  color: blue;
-}
-
 .discriptions {
   width: 400px;
   opacity: 0.5;
+  color: black;
 }
 
 .main-2 {

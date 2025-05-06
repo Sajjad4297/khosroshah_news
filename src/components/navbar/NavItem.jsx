@@ -1,20 +1,31 @@
-import Link from 'next/link'
+import Link from "next/link";
 
+function NavItem({ topic }) {
+  const noDropdownTopics = ['photo', 'video', 'user-voice'];
+  const isDropdown = topic.sub_topic && topic.sub_topic.length > 0 && !noDropdownTopics.includes(topic.name);
 
-export default function NavItem({ topic }) {
-
-
-    return (
-        <div className='nav-item'>
-            {topic.title}
-            <div className="drop-down">
-                {topic.sub_topic.map((sub_topic, i) => (
-                    <p key={i}>
-                        <Link href={sub_topic.name} className='text-color'>{sub_topic.title}</Link>
-                    </p>
-
-                ))}
-            </div>
-        </div>
-    )
+  return (
+    <div className={`nav-item ${isDropdown ? 'has-dropdown' : 'no-dropdown'}`}>
+      {isDropdown ? (
+        <>
+          <span>{topic.title}</span>
+          <div className="drop-down">
+            {topic.sub_topic.map((sub, i) => (
+              <p key={i}>
+                <Link href={`/${sub.name}`} className="text-color">
+                  {sub.title}
+                </Link>
+              </p>
+            ))}
+          </div>
+        </>
+      ) : (
+        <Link href={`/${topic.name}`} className="text-color">
+          {topic.title}
+        </Link>
+      )}
+    </div>
+  );
 }
+
+export default NavItem;
