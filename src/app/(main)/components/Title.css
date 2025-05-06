@@ -1,0 +1,23 @@
+.archive-bar {
+    width: 620px;
+    background: repeating-linear-gradient(135deg, #eee, #eee 5px, #ccc 5px, #ccc 10px);
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.archive-label {
+    background-color: #0046c0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    padding: 0 10px;
+    border-radius: 2px;
+    height: 100%;
+    font-weight: 1000;
+}

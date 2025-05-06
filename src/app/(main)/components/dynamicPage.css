@@ -1,0 +1,40 @@
+.media-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.media-content {
+    display: flex;
+    width: 620px;
+    gap: 20px;
+    color: black;
+    border-bottom: 1px dashed hsl(0, 0%, 70%);
+    padding-bottom: 20px;
+}
+.media-content img {
+    transition: filter 0.3s ease;
+  }
+  
+  .media-content:hover img {
+    filter: grayscale(100%);
+  }
+  
+
+.media-link {
+    text-decoration: none;
+   
+}
+
+.media-link p {
+    font-size: 14px;
+}
+
+.media-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.media-ontitle{
+    opacity: 0.5;
+}
