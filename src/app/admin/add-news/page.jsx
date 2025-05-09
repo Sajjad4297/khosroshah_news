@@ -9,6 +9,9 @@ import Tiptap from '@/components/Tiptap/Tiptap';
 import TagSelector from '@/components/Admin/TagSelector/TagSelector';
 import TopicSelector from '@/components/Admin/TopicSelector/TopicSelector';
 import PersianDatePicker from '@/components/Admin/DatePicker/PersianDatePicker';
+import persian from "react-date-object/calendars/persian"
+import persian_fa from "react-date-object/locales/persian_fa"
+import { DateObject } from "react-multi-date-picker"
 
 export default function page() {
     const [inputData, setInputData] = useState({})
@@ -16,7 +19,7 @@ export default function page() {
     const [selectedSubTopics, setSelectedSubTopics] = useState({});
     const [image, setImage] = useState({})
     const [tags, setTags] = useState([]);
-    const [publishDate , setPublishDate] = useState()
+    const [publishDate, setPublishDate] = useState(new DateObject({ calendar: persian, locale: persian_fa }))
     const handleSubmit = async () => {
         // const data = {
         //     image: image,
@@ -45,9 +48,7 @@ export default function page() {
         const res = await fetch("https://backend.navayetabriz.ir/api/news", {
             method: "POST",
             body: formData,
-        }).then((res) => res.json()).then((res) => console.log(res));
-
-        // Handle form submission logic here
+        });
     }
     return (
         <div className='add-news-container'>

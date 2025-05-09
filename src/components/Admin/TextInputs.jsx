@@ -12,11 +12,11 @@ const TextInputs = ({ setInputData }) => {
     };
     return (
         <Flex vertical gap={32} style={{ width: '80%', fontSize: 25 }}>
-            <Input name='top_title' showCount placeholder="رو تیتر" maxLength={30} onChange={onChange} style={{ height: 50, fontSize: 20 }} />
-            <Input name='title' showCount placeholder="عنوان خبر" maxLength={30} onChange={onChange} style={{ height: 50, fontSize: 20 }} />
-            <Input name='lead' showCount placeholder="لید" maxLength={30} onChange={onChange} style={{ height: 50, fontSize: 20 }} />
-            <Input name='writer' showCount placeholder="نویسنده" maxLength={30} onChange={onChange} style={{ height: 50, fontSize: 20 }} />
-            <Input name='source' showCount placeholder="منبع" maxLength={30} onChange={onChange} style={{ height: 50, fontSize: 20,marginBottom: 50 }} />
+            <Input name='top_title'  placeholder="رو تیتر"  onChange={onChange} style={{ height: 50, fontSize: 20 }} />
+            <Input name='title'  placeholder="عنوان خبر"  onChange={onChange} style={{ height: 50, fontSize: 20 }} />
+            <Input name='lead'  placeholder="لید"  onChange={onChange} style={{ height: 50, fontSize: 20 }} />
+            <Input name='writer'  placeholder="نویسنده"  onChange={onChange} style={{ height: 50, fontSize: 20 }} />
+            <Input name='source'  placeholder="منبع"  onChange={onChange} style={{ height: 50, fontSize: 20,marginBottom: 50 }} />
 
             {/* <TextArea
                 name='description'

@@ -6,6 +6,7 @@ import Highlight from '@tiptap/extension-highlight'
 import Paragraph from '@tiptap/extension-paragraph'
 import Text from '@tiptap/extension-text'
 import Heading from '@tiptap/extension-heading'
+import HardBreak from '@tiptap/extension-hard-break'
 import Bold from '@tiptap/extension-bold'
 import Italic from '@tiptap/extension-italic'
 import Link from '@tiptap/extension-link'
@@ -31,6 +32,7 @@ const Tiptap = ({setInputData}) => {
             Highlight,
             Italic,
             Link,
+            HardBreak,
             History.configure({
                 newGroupDelay: 500,
             }),
@@ -64,6 +66,9 @@ const Tiptap = ({setInputData}) => {
                 <button
                     onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
                 >H3</button>
+                <button
+                    onClick={() => editor.chain().focus().setHardBreak().run()}
+                >Break</button>
 
             </div>
             <div className="tiptap-input">

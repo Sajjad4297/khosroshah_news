@@ -11,6 +11,7 @@ export default function Example({value,onChange}) {
       value={value}
       onChange={onChange}
       placeholder="تاریخ..."
+      
     />
   )
 }

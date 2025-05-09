@@ -12,6 +12,7 @@
     "@ant-design/nextjs-registry": "^1.0.2",
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
     "@tiptap/extension-bold": "^2.11.7",
+    "@tiptap/extension-hard-break": "^2.12.0",
     "@tiptap/extension-highlight": "^2.11.7",
     "@tiptap/extension-history": "^2.11.7",
     "@tiptap/extension-link": "^2.11.7",

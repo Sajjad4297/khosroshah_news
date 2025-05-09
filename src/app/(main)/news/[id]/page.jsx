@@ -29,16 +29,16 @@ async function getNews(id) {
 export default async function page({ params }) {
     const { id } = await params;
     const { data: news } = await getNews(id);
-    console.log(news)
-    const date = new DateObject({ calendar: persian, locale: persian_fa,date:news.news_date })
-    console.log(date.month)
+    console.log(news.news_date)
+    const date = new DateObject({ calendar: persian, locale: persian_fa,date:news.news_date * 1000 })
+    console.log(date.year)
     return (
         <div className='container-news'>
             <div className='right-news'>
                 <div className='right-top'>
                     <div className='time'>
                         <p>
-                            ۱۸ فروردین ۱۴۰۴، ۱۴:۵۴
+                            {date.day} {date.month.name} {date.year}
                         </p>
                     </div>
                     <div>
