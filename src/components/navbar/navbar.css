@@ -120,7 +120,7 @@ header {
     gap: 20px;
     border-left: 1px solid #fff;
     position: absolute;
-    bottom: -20;
+    bottom: -20px;
 }
 
 .drop-down {
@@ -173,6 +173,9 @@ header {
   }
 
 @media (max-width: 768px) {
+    .container{
+        width: 100%;
+    }
  .logo{
     width: 100px;
     height: 30px;

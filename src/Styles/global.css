@@ -15,13 +15,16 @@
 
 @media (max-width: 768px) {
    .main-layout{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
    }
    .main-content{
-    width: 390px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
    }  
    
 }

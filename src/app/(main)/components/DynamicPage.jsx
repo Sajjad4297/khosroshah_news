@@ -6,7 +6,7 @@ import Pagination from './Pagination';
 
 const ITEMS_PER_PAGE = 15;
 
-const allArchiveData = Array.from({ length: 60 }, (_, index) => ({
+const allArchiveData = Array.from({ length: 16 }, (_, index) => ({
   id: index + 1,
   ontitle: "جمهوری اسلامی ایران",
   title: "آیا با انتقال اموال به نام دیگران می‌توان از پرداخت بدهی فرار کرد؟",

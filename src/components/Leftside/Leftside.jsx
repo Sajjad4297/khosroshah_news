@@ -13,7 +13,7 @@ export default function Leftside() {
     ];
 
     return (
-        <div className='container-leftside'>
+        <div className='container33'>
             <div className='box-list'>
                 <div className='title-box-list'>
                     <Link href="/archive">
