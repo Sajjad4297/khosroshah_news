@@ -9,30 +9,36 @@ import img1 from '@/img/slm.png';
 import img2 from '@/img/slm.png';
 import img3 from '@/img/slm.png';
 
+async function getNews() {
+    const res = await fetch("https://backend.navayetabriz.ir/api/news-over-view");
+    const result = res.json();
+    return result
+}
 
-export default function Home() {
+export default async function Home() {
   const slides = [
     { img: img1, title: 'دیدار فرماندهان با رهبری' },
     { img: img2, title: 'مراسم دفاع مقدس' },
     { img: img3, title: 'افتتاح پروژه‌های نظامی' },
   ];
+  const {data: news} = await getNews();
   return (
     <div className="Home-page">
       <div className="right-page">
         <div className='main'>
-          <Link href="/news-pages" className='right-main'>
+          <Link href={'/news/' + news[0].id } className='right-main'>
             <div className='img-side'>
-              <Image src={img} width={400} height={250} alt="تصویر خبر" />
+              <Image src={'https://backend.navayetabriz.ir/uploads/' + news[0].image} width={400} height={250} alt="تصویر خبر" />
             </div>
             <div className='text-side'>
-              <p className="p">رضا شاه :</p>
+              <p className="p">{news[0].tip_title && news[0].top_title + ":"} </p>
               <h3 className="title">
                 <span className="children-title">
-                  راهپیمایی امسال یکی از باعزت‌ترین راهپیمایی‌های روز قدس خواهد بود
+                 {news[0].title}
                 </span>
               </h3>
               <p className="discriptions">
-                رهبر معظم انقلاب اسلامی فرمودند: إن‌شاءالله راهپیمایی امسال، یکی از بهترین، پرشکوه‌ترین و باعزت‌ترین راهپیمایی‌های روز قدس خواهد بود.
+                {news[0].news_lead}
               </p>
             </div>
           </Link>
@@ -41,11 +47,11 @@ export default function Home() {
 
         <div className="main-2">
           <div className="top-main">
-            {[...Array(6)].map((_, index) => (
-              <Link href="/news-pages" key={index} className="children-title">
-                <Image src={img} width={250} height={150} alt="تصویر خبر" />
+            {news.map((item, index) => ((index > 0 && index <=6) &&
+              <Link href={'/news/' + item.id } key={index} className="children-title">
+                <Image src={"https://backend.navayetabriz.ir/uploads/"+item.image} width={250} height={150} alt={item.title} />
                 <h3 className="title">
-                  <p >رهبر انصارالله: ایران نقش محوری در حمایت از فلسطین دارد</p>
+                  <p >{item.title}</p>
                 </h3>
               </Link>
             ))}

@@ -31,7 +31,7 @@ export default async function page({ params }) {
     const { data: news } = await getNews(id);
     console.log(news.news_date)
     const date = new DateObject({ calendar: persian, locale: persian_fa,date:news.news_date * 1000 })
-    console.log(date.year)
+    console.log(news)
     return (
         <div className='container-news'>
             <div className='right-news'>
