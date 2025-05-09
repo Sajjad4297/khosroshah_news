@@ -13,12 +13,10 @@ import styles from './TopicSelector.module.css';
 //   },
 // ];
 
-export default function TopicSelector() {
-    const [selectedTopics, setSelectedTopics] = useState({});
-    const [selectedSubTopics, setSelectedSubTopics] = useState({});
+export default function TopicSelector({selectedTopics, setSelectedTopics,selectedSubTopics, setSelectedSubTopics}) {
     const [topicsData, setTopicsData] = useState();
     useEffect(() => {
-        fetch("https://news.sajy.ir/api/topics", {
+        fetch("https://backend.navayetabriz.ir/api/topics", {
             method: "GET",
         })
             .then((res) => res.json())

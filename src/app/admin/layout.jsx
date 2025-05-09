@@ -42,14 +42,13 @@ export default function AdminLayout({ children }) {
 
     // Add this breadcrumb items array
     const breadcrumbItems = [
-      { title: 'User' },
-      { title: 'Bill' },
-      { title: 'Sajy' }
+    //   { title: 'User' },
+    //   { title: 'Bill' },
+    //   { title: 'Sajy' }
     ];
     const handleMenuClick = ({ key }) => {
         router.push(key);
     };
-    console.log(pathName)
     return (
         <Layout style={{ minHeight: '100vh' }}>
           <Sider collapsible collapsed={collapsed} reverseArrow={true} onCollapse={value => setCollapsed(value)}>

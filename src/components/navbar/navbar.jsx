@@ -140,8 +140,6 @@ export default function Navbar() {
     }
   ];
 
-  console.log(topics);
-
 
   return (
     <header>

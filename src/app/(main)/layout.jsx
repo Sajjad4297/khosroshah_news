@@ -1,7 +1,6 @@
 import Footer from "@/components/Footer/Footer";
 import '@/Styles/global.css';
 import '@/Styles/Font/font.css';
-import "@/app/(main)/news-pages/news.css"
 import Navbar from "@/components/navbar/navbar";
 import Leftside from "@/components/Leftside/Leftside";
 export const metadata = {

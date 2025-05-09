@@ -1,12 +1,13 @@
-"use client"
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import img from '@/img/slm.png';
+import persian from "react-date-object/calendars/persian"
+import persian_fa from "react-date-object/locales/persian_fa"
+import {DateObject} from "react-multi-date-picker"
 import './news.css'
 import { FaTelegramPlane, FaInstagram, FaTwitter, FaFacebook, } from 'react-icons/fa';
 // import { formatTextWithSpacing } from './content';
-import Tags from '../components/Tags';
+import Tags from '../../components/Tags';
 import CopyButton from './CopyButton';
 
 
@@ -21,7 +22,16 @@ const content = `به گزارش خبرگزاری مهر، مجتبی قهرما
 رئیس کل دادگستری هرمزگان همچنین با اشاره به اینکه پرونده شناور مذکور در سیر مراحل رسیدگی قضائی قرار دارد، تأکید کرد: دادگستری استان با همکاری ضابطین، راهبرد مقابله با قاچاق سازمان یافته سوخت را با قاطعیت ادامه می‌دهد و در راستای صیانت از منافع و سرمایه‌های ملت ایران لحظه‌ای درنگ نخواهد کرد.`;
 
 const link = 'mehrnews.com/x37Msx'
-export default function page() {
+async function getNews(id) {
+    const res = await fetch(`https://backend.navayetabriz.ir/api/news/${id}`);
+    return res.json();
+}
+export default async function page({ params }) {
+    const { id } = await params;
+    const { data: news } = await getNews(id);
+    console.log(news)
+    const date = new DateObject({ calendar: persian, locale: persian_fa,date:news.news_date })
+    console.log(date.month)
     return (
         <div className='container-news'>
             <div className='right-news'>
@@ -66,47 +76,49 @@ export default function page() {
                     </div>
                 </div>
                 <div className='right-page'>
-                    <li> وزیر تعاون، کار و رفاه اجتماعی:</li>
-                    <h1>توقیف یک فروند شناور حامل سوخت قاچاق توسط نیروی دریایی سپاه</h1>
+                    <li> {news.top_title}:</li>
+                    <h1>{news.title}</h1>
                     <div className='sumarry'>
-                        <Image src={img} width={620} height={413} alt='aks' />
+                        <Image src={'https://backend.navayetabriz.ir/uploads/' + news.image} width={620} height={413} alt='aks' />
                         <div className='sumarry-children'>
                             <p>
-                                کاخ سفید درباره مذاکرات غیرمستقیم ایران و آمریکا در عمان اعلام کرد: مذاکرات با ایران بسیار مثبت و سازنده بود.
+                                {news.news_lead}
                             </p>
                         </div>
                     </div>
                     <div>
                         <div className='text'>
-                            <p>{content}</p>
-                            <p className='news-code'>کد خبر 6442937</p>
+                            <div
+                                dangerouslySetInnerHTML={{ __html: news?.content }}
+                            >{ }</div>
+                            <p className='news-code'>کد خبر: {news.id}</p>
                         </div>
                         <div className='end-text'>
                             <ul className='icon-links'>
                                 <li>
                                     <Link href="#">
-                                    <FaTelegramPlane size={25} className='telegram' />
+                                        <FaTelegramPlane size={25} className='telegram' />
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="#">
-                                    <FaInstagram size={25} className='instagram' />
+                                        <FaInstagram size={25} className='instagram' />
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="#">
-                                    <FaFacebook size={25} />
+                                        <FaFacebook size={25} />
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="#">
-                                    <FaTwitter size={25} className='twitter' />
+                                        <FaTwitter size={25} className='twitter' />
                                     </Link>
                                 </li>
                             </ul>
                             <div className='short-link'>
-                            <CopyButton text={link}/>
-                            <Link href="/" className='text-short-link'>{link}</Link>
+                                <CopyButton text={link} />
+                                <Link href="/" className='text-short-link'>{'navayetabriz.ir/news/' + news.id}</Link>
                             </div>
                         </div>
                     </div>
@@ -116,11 +128,10 @@ export default function page() {
                         </div>
                         <div>
                             <ul className='ul-tags'>
-                                <Tags value="جمهوری اسلامی ایران" />
-                                <Tags value="سازمان غذا و دارو" />
-                                <Tags value="کمیسیون بهداشت مجلس" />
-                                <Tags value="مذاکره ایران و امریکا" />
-                                <Tags value="خسروشاه نیوز" />
+                                {
+                                    news.tags.map((tag,i)=><Tags key={i} value={tag.title} link={tag.name} />)
+                                }
+
                             </ul>
                         </div>
                     </div>

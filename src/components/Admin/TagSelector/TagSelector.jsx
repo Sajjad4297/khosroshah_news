@@ -9,7 +9,7 @@ export default function TagSelector({ selected = [], onChange }) {
     const [allTags, setAllTags] = useState([]);
 
     useEffect(() => {
-        fetch("https://news.sajy.ir/api/tags", {
+        fetch("https://backend.navayetabriz.ir/api/tags", {
             method: "GET",
         })
         .then((res) => res.json())

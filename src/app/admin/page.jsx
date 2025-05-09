@@ -5,7 +5,7 @@ import './news.css'
 export default function page() {
     const [news , setNews] = useState()
         useEffect(() => {
-            fetch("https://news.sajy.ir/api/news", {
+            fetch("https://backend.navayetabriz.ir/api/news-over-view", {
                 method: "GET",
             })
             .then((res) => res.json())
@@ -16,7 +16,7 @@ export default function page() {
 
   return (
     <div className='admin-news-container'>
-        {news?.map((item,i) => <AdminNews key={i} title={item.title} description={item.description} image={"https://news.sajy.ir/uploads/"+item.image} />)}
+        {news?.map((item,i) => <AdminNews key={i} title={item.title} description={item.description} image={"https://backend.navayetabriz.ir/uploads/"+item.image} />)}
     </div>
   )
 }
