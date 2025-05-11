@@ -4,17 +4,6 @@ import Title from '../(main)/components/Title';
 import DynamicPage from '../(main)/components/DynamicPage';
 import "./sub-topic.css";
 
-export async function generateStaticParams() {
-  const params = [];
-
-  topics.forEach(topic => {
-    topic.sub_topic.forEach(sub => {
-      params.push({ name: sub.name });
-    });
-  });
-
-  return params;
-}
 
 export default function SubTopicPage({ params }) {
   const { name } = params;
