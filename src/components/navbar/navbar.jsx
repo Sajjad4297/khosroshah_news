@@ -2,7 +2,7 @@
 import React from 'react'
 import './navbar.css'
 import Image from 'next/image'
-import logo from '@/img/logo.png'
+import logo from '@/img/LogoNavayeTabrizSiteBlu.png'
 import Link from 'next/link'
 import { useState } from 'react';
 

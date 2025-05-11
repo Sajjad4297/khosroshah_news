@@ -3,7 +3,7 @@ import React from 'react'
 import './footer.css'
 import Tag from '../Tag/Tag'
 import Image from 'next/image'
-import logo from "@/img/logo.png";
+import logo from "@/img/LogoNavayeTabrizSiteBlu.png";
 import rubika from "@/img/minimal-gray.png";
 import eitta from "@/img/eitta.png";
 import bale from "@/img/90-GraFa-4.png"

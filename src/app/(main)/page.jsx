@@ -26,11 +26,11 @@ export default function Home() {
             </div>
             <div className='text-side'>
               <p className="p">رضا شاه :</p>
-              <h3 className="title">
+              <h2 className="title">
                 <span className="children-title">
                   راهپیمایی امسال یکی از باعزت‌ترین راهپیمایی‌های روز قدس خواهد بود
                 </span>
-              </h3>
+              </h2>
               <p className="discriptions">
                 رهبر معظم انقلاب اسلامی فرمودند: إن‌شاءالله راهپیمایی امسال، یکی از بهترین، پرشکوه‌ترین و باعزت‌ترین راهپیمایی‌های روز قدس خواهد بود.
               </p>
