@@ -96,18 +96,21 @@ footer{
 @media (max-width: 768px) {
     .top-footer {
         gap: 10px;
-        padding: 10px 40px;
+        width: 100%;
         flex-direction: column;
         height: 320px;
+        justify-content: center;
     }
     .top-footer ul{
         display: flex;
         flex-wrap: wrap;
+        width: 100%;
     }
 
     .top-left-footer {
         align-items: center;
         text-align: center;
+        padding-top: 0px;
     }
 
     .search-footer {

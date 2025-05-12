@@ -24,20 +24,21 @@ export default async function dynamicPage({ searchParams }) {
   const archiveData = allArchiveData.slice(start, end);
 
   return (
-    <div className='media-container'>
-      {archiveData.map(({ id, title, text, ontitle }) => (
-        <Link href="#" key={id} className='media-link'>
-          <div className="media-content">
-            <Image src={img} width={140} height={100} alt="media" />
-            <div className="media-text">
-              <p className='media-ontitle'>{ontitle}</p>
-              <h3>{title}</h3>
-              <p>{text}</p>
+    <div>
+      <div className='media-container'>
+        {archiveData.map(({ id, title, text, ontitle }) => (
+          <Link href="#" key={id} className='media-link'>
+            <div className="media-content">
+              <Image src={img} width={140} height={100} alt="media" />
+              <div className="media-text">
+                <p className='media-ontitle'>{ontitle}</p>
+                <h3>{title}</h3>
+                <p className='media-paragraph'>{text}</p>
+              </div>
             </div>
-          </div>
-        </Link>
-      ))}
-
+          </Link>
+        ))}
+      </div>
       <Pagination currentPage={page} totalPages={totalPages} />
     </div>
   );

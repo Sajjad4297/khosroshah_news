@@ -118,7 +118,7 @@ export default async function Home() {
               </div>
             ))}
           </div>
-          <div className="photo-news">
+          {/* <div className="photo-news">
             <div className="photo">
               <OtherImportantNews text="تصاوير" href="/important-news" className="Other-important-news" />
               <div className="photo-img">
@@ -156,7 +156,7 @@ export default async function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

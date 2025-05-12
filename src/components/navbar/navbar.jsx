@@ -112,41 +112,41 @@ export default function Navbar() {
         { "id": 39, "title": "فناوری‌های نوین", "name": "newtechnologies", "topicId": 6 }
       ]
     },
-    {
-      "id": 7,
-      "title": "عکس",
-      "name": "galery",
-      "sub_topic": []
-    },
-    {
-      "id": 8,
-      "title": "فیلم",
-      "name": "media",
-      "sub_topic": []
-    },
-    {
-      "id": 9,
-      "title": "صدای مخاطب",
-      "name": "audience",
-      "sub_topic": []
-    },
-    {
-      "id": 10,
-      "title": "آگهی دولتی",
-      "name": "government-ad",
-      "sub_topic": [
-        { "id": 40, "title": "بازار", "name": "market", "topicId": 10 }
-      ]
-    }
+    // {
+    //   "id": 7,
+    //   "title": "عکس",
+    //   "name": "galery",
+    //   "sub_topic": []
+    // },
+    // {
+    //   "id": 8,
+    //   "title": "فیلم",
+    //   "name": "media",
+    //   "sub_topic": []
+    // },
+    // {
+    //   "id": 9,
+    //   "title": "صدای مخاطب",
+    //   "name": "audience",
+    //   "sub_topic": []
+    // },
+    // {
+    //   "id": 10,
+    //   "title": "آگهی دولتی",
+    //   "name": "government-ad",
+    //   "sub_topic": [
+    //     { "id": 40, "title": "بازار", "name": "market", "topicId": 10 }
+    //   ]
+    // }
   ];
 
 
   return (
     <header>
       <div className='container'>
-        <div>
+        <div className='logo-side'>
           <Link href="/">
-            <Image src={logo} width={350} height={120} className='logo' alt='logo' />
+            <Image src={logo} width={400} height={120} className='logo' alt='logo' />
           </Link>
         </div>
         <div>

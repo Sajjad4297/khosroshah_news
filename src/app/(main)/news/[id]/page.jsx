@@ -12,8 +12,6 @@ import CopyButton from './CopyButton';
 import { getNews } from './getNews.js';
 
 
-const link = 'mehrnews.com/x37Msx'
-
 export async function generateMetadata({ params }) {
   const news = await getNews(params.id);
 
@@ -94,7 +92,7 @@ export default async function page({ params }) {
                         </div>
                         <div>
                             <div className='text'>
-                                <div
+                                <div className='text-side2' 
                                     dangerouslySetInnerHTML={{ __html: news?.content }}
                                 >{ }</div>
                                 <p className='news-code'>کد خبر: {news.id}</p>
@@ -123,12 +121,12 @@ export default async function page({ params }) {
                                     </li>
                                 </ul>
                                 <div className='short-link'>
-                                    <CopyButton text={link} />
+                                    <CopyButton text={'navayetabriz.ir/news/' + news.id} />
                                     <Link href="/" className='text-short-link'>{'navayetabriz.ir/news/' + news.id}</Link>
                                 </div>
                             </div>
                         </div>
-                        <div >
+                        <div className='tags-title-2' >
                             <div className='children-other-tags'>
                                 <span className='other-tags-title'>برچسب‌ها</span>
                             </div>
@@ -160,14 +158,14 @@ export default async function page({ params }) {
                                     <div className="form1">
                                         <div className="input-wrapper">
                                             <div className="form-group">
-                                                <input type="text" required />
+                                                <input type="text" required  />
                                                 <label>نام</label>
                                             </div>
                                         </div>
 
                                         <div className="input-wrapper">
                                             <div className="form-group">
-                                                <input type="email" required />
+                                                <input type="email" required  />
                                                 <label>ایمیل</label>
                                             </div>
                                         </div>
@@ -175,14 +173,14 @@ export default async function page({ params }) {
                                     <div className="form2">
                                         <div className="input-wrapper2">
                                             <div className="form-group2">
-                                                <input type="text" required />
+                                                <input type="text" required className='people-opinion' />
                                                 <label>نظر شما</label>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='captcha'>
+                                    {/* <div className='captcha'>
                                         <p>* لطفا حاصل عبارت را در جعبه متن روبرو وارد کنید</p>
-                                    </div>
+                                    </div> */}
                                     <div className='send'>
                                         <button>
                                             ارسال

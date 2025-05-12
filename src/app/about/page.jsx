@@ -8,7 +8,7 @@ export default function page() {
         <div className='about-container' showSidebar={false}>
             <div className="about-title">
                 <h2>
-                    دربارهٔ خبرگزاری نوای تبریز
+                    دربارهٔ پایگاه خبری نوای تبریز
                 </h2>
             </div>
             <div className='about-text'>
@@ -37,23 +37,22 @@ export default function page() {
                     <p><strong>شورای سردبیری:</strong></p>
                     <ul>
                         <p>پویا خوش پیمان</p>
-                        <p>سعید عبدی</p>
                         <p>امیر عیانی خسروشاهی</p>
                         <p>امیررضا لوحی خسروشاهی</p>
                     </ul>
 
                     <p><strong>تحریریه:</strong></p>
                     <ul>
-                        <p><strong>ورزش:</strong> سعید عبدی</p>
+                        <p><strong>ورزش:</strong> سیار جلال زاده</p>
                         <p><strong>سیاست:</strong> سعید ایزدی خسروشاهی</p>
-                        <p><strong>فرهنگ:</strong> امین جعفری خسروشاهی</p>
+                        <p><strong>فرهنگ:</strong> </p>
                         <p><strong>چند رسانه‌ای:</strong> امیر عیانی خسروشاهی – امین چراغی</p>
-                        <p><strong>سرویس عکس:</strong> پینار رحیمی، شقایق تیموری</p>
+                        <p><strong>سرویس عکس:</strong> پینار رحیمی</p>
                     </ul>
 
-                    <p><strong>آدرس دفتر:</strong> خسروشاه، فلکه اصلی، مجتمع اداری رضوی، طبقه سوم، واحد آخر.</p>
-                    <p><strong>تلفن تماس:</strong> ۰۹۱۴۸۴۱۹۹۲۷</p>
-                    <p><strong>شناسه مجوز وزارت ارشاد:</strong> ۸۵۶۱۵</p>
+                    <p><strong>آدرس دفتر:</strong> </p>
+                    <p><strong>تلفن تماس:</strong> </p>
+                    <p><strong>شناسه مجوز وزارت ارشاد:</strong> </p>
                 </div>
 
             </div>

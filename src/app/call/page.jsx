@@ -10,9 +10,9 @@ export default function CallPage() {
                 </h2>
             </div>
             <div className="about-contact">
-                <p><strong>آدرس دفتر:</strong> خسروشاه، فلکه اصلی، مجتمع اداری رضوی، طبقه سوم، واحد آخر.</p>
-                <p><strong>پست الکترونیکی:</strong> <a href="mailto:info@khosroshahnews.ir">info@khosroshahnews.ir</a></p>
-                <p><strong>تلفن:</strong> ۳۳۳۳۳۳۳۳۳- (۰۴۱)</p>
+                <p><strong>آدرس دفتر:</strong> </p>
+                <p><strong>پست الکترونیکی:</strong> <a href="mailto:info@khosroshahnews.ir"></a></p>
+                <p><strong>تلفن:</strong> </p>
             </div>
 
         </div>
