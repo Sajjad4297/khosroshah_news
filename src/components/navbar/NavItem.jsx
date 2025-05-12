@@ -8,11 +8,11 @@ function NavItem({ topic }) {
     <div className={`nav-item ${isDropdown ? 'has-dropdown' : 'no-dropdown'}`}>
       {isDropdown ? (
         <>
-          <span>{topic.title}</span>
+          <Link href={'/topics/' + topic.name}>{topic.title}</Link>
           <div className="drop-down">
             {topic.sub_topic.map((sub, i) => (
               <p key={i}>
-                <Link href={`/${sub.name}`} className="text-color">
+                <Link href={`/sub-topics/${sub.name}`} className="text-color">
                   {sub.title}
                 </Link>
               </p>

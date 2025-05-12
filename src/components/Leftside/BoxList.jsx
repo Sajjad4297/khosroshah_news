@@ -1,17 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 
-export default function BoxList({tagTitle = "" , news}) {
+export default function BoxList({tagTitle = "" , news,newsByVisit}) {
 
-    const tagLinks = [
-        "بورسی‌ترین استان‌های ایران کدامند؟",
-        "دفترچه آزمون دکتری ۱۴۰۴ امروز منتشر می شود؛ آغاز انتخاب رشته از فردا",
-        "سرمایه‌گذاری در صنایع فرهنگی ابزاری برای تقویت هویت ملی است",
-        "از مطالبه رهبری برای پخش «روایت فتح» تا دوربینی که شهادت آوینی را گرفت",
-        "از مطالبه رهبری برای پخش «روایت فتح» تا دوربینی که شهادت آوینی را گرفت",
-        "از مطالبه رهبری برای پخش «روایت فتح» تا دوربینی که شهادت آوینی را گرفت",
-        "از مطالبه رهبری برای پخش «روایت فتح» تا دوربینی که شهادت آوینی را گرفت",
-    ];
     return (
 
         <div className='box-container'>
@@ -30,9 +21,9 @@ export default function BoxList({tagTitle = "" , news}) {
                     ):
 
 
-                    tagLinks.map((text, index) => (
+                    newsByVisit.map((item, index) => ((index >= 6 && index <= 12) &&
                         <li key={index}>
-                            <Link href="/">{text}</Link>
+                            <Link href={"/news/" + item.id}>{item.title}</Link>
                         </li>
                     ))
 

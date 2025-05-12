@@ -13,7 +13,8 @@ import { getNews } from './getNews.js';
 
 
 export async function generateMetadata({ params }) {
-  const news = await getNews(params.id);
+    const { id:news_id } = await params;
+    const news = await getNews(news_id);
 
   return {
     title: news.title,
@@ -33,7 +34,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function page({ params }) {
-  const news = await getNews(params.id);
+    const { id:news_id } = await params;
+    const news = await getNews(news_id);
     const date = new DateObject({ calendar: persian, locale: persian_fa, date: news.news_date * 1000 })
     return (
         <>
@@ -92,7 +94,7 @@ export default async function page({ params }) {
                         </div>
                         <div>
                             <div className='text'>
-                                <div className='text-side2' 
+                                <div className='text-side2'
                                     dangerouslySetInnerHTML={{ __html: news?.content }}
                                 >{ }</div>
                                 <p className='news-code'>کد خبر: {news.id}</p>

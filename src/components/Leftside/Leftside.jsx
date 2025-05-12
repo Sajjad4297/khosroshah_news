@@ -8,6 +8,11 @@ async function getNews() {
     const result = res.json();
     return result
 }
+async function getNewsByVisit() {
+    const res = await fetch("https://backend.navayetabriz.ir/api/news-over-view/byVisit");
+    const result = res.json();
+    return result
+}
 
 export default async function Leftside() {
     const newsItems = [
@@ -17,6 +22,7 @@ export default async function Leftside() {
         { title: "از مطالبه رهبری برای پخش «روایت فتح» تا دوربینی که شهادت آوینی را گرفت", href: "/" }
     ];
     const {data: news} = await getNews();
+    const {data: newsByVisit} = await getNewsByVisit()
     return (
         <div className='container33'>
             <div className='box-list'>
@@ -39,7 +45,7 @@ export default async function Leftside() {
                 <BoxList tagTitle = "تازه‌ترین اخبار" news={news} />
             </div>
             <div>
-                <BoxList tagTitle = "پربازدیدترین ها" />
+                <BoxList  tagTitle = "پربازدیدترین ها" newsByVisit={newsByVisit} />
             </div>
         </div>
     );
