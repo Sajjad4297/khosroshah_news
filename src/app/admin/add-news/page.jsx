@@ -12,6 +12,7 @@ import PersianDatePicker from '@/components/Admin/DatePicker/PersianDatePicker';
 import persian from "react-date-object/calendars/persian"
 import persian_fa from "react-date-object/locales/persian_fa"
 import { DateObject } from "react-multi-date-picker"
+import toast from 'react-hot-toast'
 
 export default function page() {
     const [inputData, setInputData] = useState({})
@@ -19,6 +20,8 @@ export default function page() {
     const [selectedSubTopics, setSelectedSubTopics] = useState({});
     const [image, setImage] = useState({})
     const [tags, setTags] = useState([]);
+    const [imageUrl, setImageUrl] = useState();
+    const [editorInstance, setEditorInstance] = useState(null);
     const [publishDate, setPublishDate] = useState(new DateObject({ calendar: persian, locale: persian_fa }))
     const handleSubmit = async () => {
         // const data = {
@@ -43,20 +46,46 @@ export default function page() {
         formData.append('source', inputData.source);
         formData.append('date', publishDate.unix);
         formData.append('tags', JSON.stringify(tags.map(tag => tag.id)))
-        formData.append('topics', JSON.stringify(Object.keys(selectedTopics).map(id => id)))
-        formData.append('subTopics', JSON.stringify(Object.keys(selectedSubTopics).map(id => id)))
-        const res = await fetch("https://backend.navayetabriz.ir/api/news", {
-            method: "POST",
-            body: formData,
-        });
-    }
+        formData.append('topics', JSON.stringify(Object.keys(selectedTopics)))
+        formData.append('subTopics', JSON.stringify(Object.keys(selectedSubTopics)))
+
+        try {
+            const res = await fetch("https://backend.navayetabriz.ir/api/news", {
+                method: "POST",
+                body: formData,
+            });
+
+            const result = await res.json();
+
+            if (res.ok) {
+                toast.success("✅ خبر با موفقیت ثبت شد");
+                setInputData({});
+                setImage({});
+                setImageUrl(undefined); 
+                setTags([]);
+                setSelectedTopics({});
+                setSelectedSubTopics({});
+                setPublishDate(new DateObject({ calendar: persian, locale: persian_fa }));
+                if (editorInstance) {
+                    editorInstance.commands.clearContent();
+                  }
+            } else {
+                toast.error(`❌ خطا در ثبت خبر: ${result?.message || "خطای نامشخص"}`);
+            }
+
+        } catch (error) {
+            toast.error("⛔ خطا در اتصال به سرور");
+            console.error(error);
+        }
+    };
+
     return (
         <div className='add-news-container'>
-            <FileInput setImage={setImage} setInputData={setInputData} />
+            <FileInput setImage={setImage} imageUrl={imageUrl} setImageUrl={setImageUrl} />
             <br />
-            <TextInputs setInputData={setInputData} />
+            <TextInputs inputData={inputData} setInputData={setInputData} />
             <br />
-            <Tiptap setInputData={setInputData} />
+            <Tiptap setInputData={setInputData} onEditorReady={setEditorInstance} />
             <br />
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', width: '100%' }}>
                 <TagSelector selected={tags} onChange={setTags} />

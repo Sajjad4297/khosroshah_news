@@ -146,7 +146,15 @@ export default function Navbar() {
       <div className='container'>
         <div className='logo-side'>
           <Link href="/">
-            <Image src={logo} width={400} height={120} className='logo' alt='logo' />
+            <Image
+              src={logo}
+              width={300}
+              height={100}
+              alt="logo"
+              style={{ objectFit: 'contain' }}
+              className="logo"
+            />
+
           </Link>
         </div>
         <div>

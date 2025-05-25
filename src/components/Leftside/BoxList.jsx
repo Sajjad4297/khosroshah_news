@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-export default function BoxList({tagTitle = "" , news,newsByVisit}) {
+export default function BoxList({ tagTitle = "", news, newsByVisit }) {
 
     return (
 
@@ -11,24 +11,13 @@ export default function BoxList({tagTitle = "" , news,newsByVisit}) {
             </div>
             <div className='list-box-list'>
                 <ul>
-
-                    { news ?
-                    news.map((item,index)=>(index > 6 && index <= 13) &&
-                        <li key={index}>
-                            <Link href={"/news/" + item.id}>{item.title}</Link>
+                    {(news || []).slice(6, 13).map((item, index) => (
+                        <li key={item.id}>
+                            <Link href={`/news/${item.id}`}>{item.title}</Link>
                         </li>
-
-                    ):
-
-
-                    newsByVisit.map((item, index) => ((index >= 6 && index <= 12) &&
-                        <li key={index}>
-                            <Link href={"/news/" + item.id}>{item.title}</Link>
-                        </li>
-                    ))
-
-                }
+                    ))}
                 </ul>
+
             </div>
         </div>
     );

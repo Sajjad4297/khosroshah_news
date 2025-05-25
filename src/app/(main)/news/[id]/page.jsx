@@ -10,6 +10,7 @@ import { FaTelegramPlane, FaInstagram, FaTwitter, FaFacebook, } from 'react-icon
 import Tags from '../../components/Tags';
 import CopyButton from './CopyButton';
 import { getNews } from './getNews.js';
+import NewsContentClient from './NewsContentClient'
 
 
 export async function generateMetadata({ params }) {
@@ -94,9 +95,7 @@ export default async function page({ params }) {
                         </div>
                         <div>
                             <div className='text'>
-                                <div className='text-side2'
-                                    dangerouslySetInnerHTML={{ __html: news?.content }}
-                                >{ }</div>
+                            <NewsContentClient html={news.content} />
                                 <p className='news-code'>کد خبر: {news.id}</p>
                             </div>
                             <div className='end-text'>

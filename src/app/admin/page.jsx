@@ -9,9 +9,8 @@ export default function page() {
                 method: "GET",
             })
             .then((res) => res.json())
-            .then(res => {setNews(res.data);console.log(res)})
+            .then(res => {setNews(res.data);})
             .catch(err => console.error('Error fetching tags:', err));
-            console.log(news)
         }, []);
 
   return (

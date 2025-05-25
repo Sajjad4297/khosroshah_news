@@ -21,43 +21,70 @@ async function getNewsByVisit() {
 }
 
 export default async function Home() {
-    const slides = [
-        { img: img1, title: 'دیدار فرماندهان با رهبری' },
-        { img: img2, title: 'مراسم دفاع مقدس' },
-        { img: img3, title: 'افتتاح پروژه‌های نظامی' },
-    ];
+
+
     const { data: news } = await getNews();
-    const { data: newsByVisit } = await getNewsByVisit()
+    const { data: newsByVisit } = await getNewsByVisit();
+    console.log("✅ ALL NEWS", news);
+
+    const leadNews = news
+        .filter(n => n.topics?.some(t => t.name === 'lead1'))
+        .sort((a, b) => b.news_date - a.news_date);
+
+    const nonLeadNews = news
+        .filter(n => !n.topics?.some(t => t.name === 'lead1'))
+        .sort((a, b) => b.news_date - a.news_date);
+
+    const mainNews = nonLeadNews.slice(0, 6);
+    const otherNews = nonLeadNews.slice(6, 20);
+
+    const mostViewedManual = news.filter(n =>
+        n.topics?.some(t => t.name === 'most_viewed')
+    );
+
+    const mostViewedMain = mostViewedManual.slice(0, 6);
+
+
+
     return (
         <div className="Home-page">
             <div className="right-page">
                 <div className='main'>
-                    <Link href={'/news/' + news[0].id} className='right-main'>
-                        <div className='img-side'>
-                            <Image src={'https://backend.navayetabriz.ir/uploads/' + news[0].image} width={400} height={250} alt="تصویر خبر" />
-                        </div>
-                        <div className='text-side'>
-                            <p className="p">{news[0].tip_title && news[0].top_title + ":"} </p>
-                            <h3 className="title">
-                                <span className="children-title">
-                                    {news[0].title}
-                                </span>
-                            </h3>
-                            <p className="discriptions">
-                                {news[0].news_lead}
-                            </p>
-                        </div>
-                    </Link>
+                    {leadNews.length > 0 && (
+                        <Link href={`/news/${leadNews[0].id}`} className="right-main">
+                            <div className="img-side">
+                                <Image
+                                    src={`https://backend.navayetabriz.ir/uploads/${leadNews[0].image}`}
+                                    width={400}
+                                    height={250}
+                                    alt="تصویر خبر"
+                                />
+                            </div>
+                            <div className="text-side">
+                                <p className="p">{leadNews[0].top_title && leadNews[0].top_title + ':'}</p>
+                                <h3 className="title">
+                                    <span className="children-title">{leadNews[0].title}</span>
+                                </h3>
+                                <p className="discriptions">{leadNews[0].news_lead}</p>
+                            </div>
+                        </Link>
+                    )}
+
 
                 </div>
 
                 <div className="main-2">
                     <div className="top-main">
-                        {news.map((item, index) => ((index > 0 && index <= 6) &&
-                            <Link href={'/news/' + item.id} key={index} className="children-title">
-                                <Image src={"https://backend.navayetabriz.ir/uploads/" + item.image} width={250} height={150} alt={item.title} />
+                        {mainNews.map((item, index) => (
+                            <Link href={`/news/${item.id}`} key={index} className="children-title">
+                                <Image
+                                    src={`https://backend.navayetabriz.ir/uploads/${item.image}`}
+                                    width={250}
+                                    height={150}
+                                    alt={item.title}
+                                />
                                 <h3 className="title">
-                                    <p >{item.title}</p>
+                                    <p>{item.title}</p>
                                 </h3>
                             </Link>
                         ))}
@@ -69,44 +96,44 @@ export default async function Home() {
                         </div>
                         <div className="container-news">
                             <div className="Most-viewed-news-top">
-                                {newsByVisit.map((item , index)=>(index < 3 && index <= 13) &&
-                                <div key={index} className="children-Most-viewed-news-top">
-                                    <Link href={"/news/" + item.id}>
-                                       {item.title}
-                                    </Link>
-                                </div>
-                                )}
+                                {mostViewedMain.slice(0, 3).map((item, index) => (
+                                    <div key={index} className="children-Most-viewed-news-top">
+                                        <Link href={`/news/${item.id}`}>{item.title}</Link>
+                                    </div>
+                                ))}
                             </div>
                             <div className="Most-viewed-news-bot">
-                                {newsByVisit.map((item , index)=>(index >= 3 && index < 6) &&
-                                <div key={index} className="children-Most-viewed-news-top">
-                                    <Link href={"/news/" + item.id}>
-                                       {item.title}
-                                    </Link>
-                                </div>
-                                )}
+                                {mostViewedMain.slice(3, 6).map((item, index) => (
+                                    <div key={index} className="children-Most-viewed-news-top">
+                                        <Link href={`/news/${item.id}`}>{item.title}</Link>
+                                    </div>
+                                ))}
                             </div>
                         </div>
+
                     </div>
 
                     <OtherImportantNews />
 
                     <div className="other-news">
-                        {news.map((item, index) => (index > 13 && index <= 20 ) &&
-                            <div className="news" key={index} >
-                                <Link href={`/news/${item.id}`} className="children-news" >
+                        {otherNews.map((item, index) => (
+                            <div className="news" key={index}>
+                                <Link href={`/news/${item.id}`} className="children-news">
                                     <div>
-                                        <Image src={"https://backend.navayetabriz.ir/uploads/" + item.image} width={200} height={120} alt="تصویر خبر" />
+                                        <Image
+                                            src={`https://backend.navayetabriz.ir/uploads/${item.image}`}
+                                            width={200}
+                                            height={120}
+                                            alt="تصویر خبر"
+                                        />
                                     </div>
                                     <div className="news-text">
                                         <h3>{item.title}</h3>
-                                        <p>
-                                            {item.news_lead}
-                                        </p>
+                                        <p>{item.news_lead}</p>
                                     </div>
                                 </Link>
                             </div>
-                        )}
+                        ))}
                     </div>
                     {/* <div className="photo-news">
             <div className="photo">
