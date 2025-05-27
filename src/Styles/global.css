@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Vazir', sans-serif;  
+    font-family: 'Vazir', sans-serif;
 }
 .main-content {
     display: flex;
@@ -25,6 +25,21 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-   }  
-   
+   }
+
 }
+#delete-icon{
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    top: -20px;
+    right: -20px;
+    background-color: red;
+    cursor: pointer;
+    padding: 8px;
+    box-shadow: 0 0 6px black;
+    transition: all .5s;
+ }
+ #delete-icon:hover{
+    box-shadow: 0 0 12px rgb(174, 0, 0);
+ }
