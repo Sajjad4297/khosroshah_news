@@ -40,7 +40,7 @@ export default async function page({ params }) {
     const date = new DateObject({ calendar: persian, locale: persian_fa, date: news.news_date * 1000 })
     return (
         <>
-            <div className='container-news'>
+            <div className='container-news2'>
                 <div className='right-news'>
                     <div className='right-top'>
                         <div className='time'>

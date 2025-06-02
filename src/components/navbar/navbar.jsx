@@ -148,8 +148,8 @@ export default function Navbar() {
           <Link href="/">
             <Image
               src={logo}
-              width={300}
-              height={100}
+              width={400}
+              height={130}
               alt="logo"
               style={{ objectFit: 'contain' }}
               className="logo"

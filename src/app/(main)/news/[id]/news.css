@@ -1,4 +1,4 @@
-.container-news {
+.container-news2 {
   max-width: 620px;
   width: 100%;
 }
@@ -25,8 +25,8 @@
 }
 
 .ul-icon li a {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background-color: #fff;
   text-align: center;
   line-height: 50px;
@@ -96,6 +96,7 @@ ul li:nth-child(3) a:before {
 .news-code {
   padding-top: 25px;
   opacity: 0.5;
+  font-size: 1.2rem;
 }
 
 .sumarry {
@@ -137,7 +138,7 @@ ul li:nth-child(3) a:before {
 
 .sumarry-children p {
   width: 620px;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
 }
 
 .children-other-tags {
@@ -180,6 +181,7 @@ ul li:nth-child(3) a:before {
 
 .texts {
   padding-right: 30px;
+  font-size: 1.1rem;
 }
 
 .form1 {
@@ -308,6 +310,7 @@ ul li:nth-child(3) a:before {
 .text-short-link {
   padding: 10px 10px;
   color: #3b3b3b;
+  font-size: 1.3rem;
 }
 
 .copy-button {

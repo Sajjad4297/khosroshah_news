@@ -28,9 +28,9 @@ export default async function Home() {
     console.log("✅ ALL NEWS", news);
 
     const leadNews = news
-        .filter(n => n.topics?.some(t => t.name === 'lead1'))
-        .sort((a, b) => b.news_date - a.news_date);
-
+    .filter(n => n.topics?.some(t => t.name === 'lead1'))
+    .sort((a, b) => new Date(b.news_date) - new Date(a.news_date));
+    
     const nonLeadNews = news
         .filter(n => !n.topics?.some(t => t.name === 'lead1'))
         .sort((a, b) => b.news_date - a.news_date);

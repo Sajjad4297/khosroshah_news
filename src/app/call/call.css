@@ -6,11 +6,11 @@
 .call-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    min-height: 100vh
 }
 .about-contact{
-    font-size: 13px;
+    font-size: 20px;
     color: hsl(0, 0%, 30%);
     display: flex;
     flex-direction: column;

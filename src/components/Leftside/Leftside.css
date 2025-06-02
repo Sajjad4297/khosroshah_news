@@ -4,12 +4,12 @@
     gap: 20px;
 }
 .box-container{
-    width: 300px;
+    width: 350px;
 }
 .box-list {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 350px;
     background-color: #efefef;
     height: 510px;
 }
