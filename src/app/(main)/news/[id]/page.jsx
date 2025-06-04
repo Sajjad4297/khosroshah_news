@@ -83,7 +83,7 @@ export default async function page({ params }) {
                         </div>
                     </div>
                     <div className='right-page'>
-                        <li> {news.top_title}:</li>
+                        <li> {news.top_title}</li>
                         <h1>{news.title}</h1>
                         <div className='sumarry'>
                             <Image src={'https://backend.navayetabriz.ir/uploads/' + news.image} width={620} height={413} alt='aks' />

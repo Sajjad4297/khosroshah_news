@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://navayetabriz.ir/api/sitemap.xml

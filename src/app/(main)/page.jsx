@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import Image from "next/image";
 import Link from "next/link";
 import "./Home.css";
@@ -10,13 +11,17 @@ import img2 from '@/img/slm.png';
 import img3 from '@/img/slm.png';
 
 async function getNews() {
-    const res = await fetch("https://backend.navayetabriz.ir/api/news-over-view");
-    const result = res.json();
+    const res = await fetch("https://backend.navayetabriz.ir/api/news-over-view", {
+        cache: 'no-store',
+    });
+    const result = await res.json();
     return result
 }
 async function getNewsByVisit() {
-    const res = await fetch("https://backend.navayetabriz.ir/api/news-over-view/byVisit");
-    const result = res.json();
+    const res = await fetch("https://backend.navayetabriz.ir/api/news-over-view/byVisit", {
+        cache: 'no-store',
+    });
+    const result = await res.json();
     return result
 }
 
@@ -28,9 +33,9 @@ export default async function Home() {
     console.log("✅ ALL NEWS", news);
 
     const leadNews = news
-    .filter(n => n.topics?.some(t => t.name === 'lead1'))
-    .sort((a, b) => new Date(b.news_date) - new Date(a.news_date));
-    
+        .filter(n => n.topics?.some(t => t.name === 'lead1'))
+        .sort((a, b) => new Date(b.news_date) - new Date(a.news_date));
+
     const nonLeadNews = news
         .filter(n => !n.topics?.some(t => t.name === 'lead1'))
         .sort((a, b) => b.news_date - a.news_date);
