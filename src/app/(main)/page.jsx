@@ -88,7 +88,7 @@ export default async function Home() {
                                     height={150}
                                     alt={item.title}
                                 />
-                                <h3 className="title">
+                                <h3 className="title2">
                                     <p>{item.title}</p>
                                 </h3>
                             </Link>
