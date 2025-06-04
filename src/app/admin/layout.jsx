@@ -22,10 +22,33 @@ function getItem(label, key, icon, children) {
     label,
   };
 }
+const pendingCount = 2;
+
 const items = [
   getItem('News', '/admin', <PieChartOutlined />),
   getItem('Add News', '/admin/add-news', <PlusCircleOutlined style={{ fontSize: 17 }} />),
   getItem('Add Tags', '/admin/add-tags', <PlusCircleOutlined style={{ fontSize: 17 }} />),
+  getItem(
+    <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+      comments
+      {pendingCount > 0 && (
+        <span style={{
+          backgroundColor: 'red',
+          color: 'white',
+          fontSize: '10px',
+          fontWeight: 'bold',
+          padding: '2px 6px',
+          borderRadius: '999px',
+          display: 'inline-block',
+          lineHeight: '1',
+        }}>
+          {pendingCount}
+        </span>
+      )}
+    </span>,
+    '/admin/comments',
+    <UserOutlined />
+  ),
   getItem('Add News', 'sub1', <UserOutlined />, [
     getItem('Tom', '3'),
     getItem('Bill', '4'),

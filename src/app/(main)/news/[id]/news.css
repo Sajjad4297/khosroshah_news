@@ -110,6 +110,7 @@ ul li:nth-child(3) a:before {
   display: flex;
   align-items: center;
   top: 0;
+  width: 90%;
 }
 
 .end-text {
@@ -138,7 +139,7 @@ ul li:nth-child(3) a:before {
 
 .sumarry-children p {
   width: 620px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .children-other-tags {
@@ -357,10 +358,6 @@ ul li:nth-child(3) a:before {
   .sumarry img {
     width: 90%;
     height: 270px;
-  }
-
-  .sumarry-children {
-    width: 81%;
   }
   .text-side2{
     display: flex;
