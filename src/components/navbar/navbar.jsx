@@ -1,29 +1,32 @@
-"use client"
-import React from 'react'
-import './navbar.css'
-import Image from 'next/image'
-import logo from '@/img/LogoNavayeTabrizSiteBlu.png'
-import Link from 'next/link'
+"use client";
+import React from 'react';
+import './navbar.css';
+import Image from 'next/image';
+import logo from '@/img/LogoNavayeTabrizSiteBlu.png';
+import Link from 'next/link';
 import { useState } from 'react';
+import NavItem from './NavItem';
+import SearchModal from './SearchModal';
 
 
-import NavItem from './NavItem'
-// async function getTopics() {
-//     const res = await axios('http://localhost:3000/api/topics');
-//     return res.data.topics;
-//   }
+
 export default function Navbar() {
-  const link = [{
-    text: 'درباره ما',
-    href: '/about'
-  }, {
-    text: 'تماس با ما',
-    href: '/call'
-  }];
+  const link = [
+    { text: 'درباره ما', href: '/about' },
+    { text: 'تماس با ما', href: '/call' }
+  ];
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false); 
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const openSearchModal = () => {
+    setIsMenuOpen(false); 
+    setIsSearchModalOpen(true);
+  }
+  const closeSearchModal = () => setIsSearchModalOpen(false);
+
   const topics = [
     {
       "id": 0,
@@ -112,34 +115,7 @@ export default function Navbar() {
         { "id": 39, "title": "فناوری‌های نوین", "name": "newtechnologies", "topicId": 6 }
       ]
     },
-    // {
-    //   "id": 7,
-    //   "title": "عکس",
-    //   "name": "galery",
-    //   "sub_topic": []
-    // },
-    // {
-    //   "id": 8,
-    //   "title": "فیلم",
-    //   "name": "media",
-    //   "sub_topic": []
-    // },
-    // {
-    //   "id": 9,
-    //   "title": "صدای مخاطب",
-    //   "name": "audience",
-    //   "sub_topic": []
-    // },
-    // {
-    //   "id": 10,
-    //   "title": "آگهی دولتی",
-    //   "name": "government-ad",
-    //   "sub_topic": [
-    //     { "id": 40, "title": "بازار", "name": "market", "topicId": 10 }
-    //   ]
-    // }
   ];
-
 
   return (
     <header>
@@ -150,41 +126,62 @@ export default function Navbar() {
               src={logo}
               width={400}
               height={130}
-              alt="logo"
+              alt="لوگوی سایت نوای تبریز" 
               style={{ objectFit: 'contain' }}
               className="logo"
+              priority 
             />
-
           </Link>
         </div>
-        <div>
-          <div className='div1'>
-            {
-              link.map(link => (
-                <li key={link.text} className='li1'>
-                  <Link href={link.href} className='text-color'>{link.text}</Link>
-                </li>
 
-              ))}
+       
+        <div className='desktop-nav-section'> 
+          <div className='div1'>
+            {link.map(item => (
+              <li key={item.text} className='li1'>
+                <Link href={item.href} className='text-color'>{item.text}</Link>
+              </li>
+            ))}
           </div>
           <div>
-            <form action="">
+            <form action="" className='desktop-search-form'>
               <input type="search" placeholder='جستجو...' className='search-box' />
             </form>
           </div>
         </div>
-        <div className={`hamburger-menu ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-          <div className="bar top"></div>
-          <div className="bar middle"></div>
-          <div className="bar bottom"></div>
+        <div className="mobile-buttons">
+          <button
+            type="button"
+            className="mobile-search-trigger"
+            onClick={openSearchModal}
+            aria-label="باز کردن جستجو"
+          >
+           
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          <div className={`hamburger-menu ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu} aria-expanded={isMenuOpen} aria-label="باز و بسته کردن منو">
+            <div className="bar top"></div>
+            <div className="bar middle"></div>
+            <div className="bar bottom"></div>
+          </div>
         </div>
       </div>
-      <div className={`dropdown ${isOpen ? 'open' : ''}`}>
+      <div className={`dropdown ${isMenuOpen ? 'open' : ''}`}>
+        {link.map(item => (
+          <Link key={`mobile-${item.text}`} href={item.href} className="dropdown-item" onClick={toggleMenu}>
+            {item.text}
+          </Link>
+        ))}
+      
         {topics.map((topic, i) => (
-          <NavItem topic={topic} key={i} />
+          <NavItem topic={topic} key={i} onClick={isMenuOpen ? toggleMenu : undefined} />
         ))}
       </div>
-
+      <SearchModal isOpen={isSearchModalOpen} onClose={closeSearchModal} />
     </header>
-  )
+  );
 }
