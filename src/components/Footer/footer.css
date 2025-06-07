@@ -1,5 +1,6 @@
-footer {}
-
+footer{
+    margin-top: 50px;
+}
 .top-footer {
     height: 120px;
     background-color: #404040;
@@ -7,6 +8,7 @@ footer {}
     justify-content: space-around;
     align-items: center;
 }
+
 .top-footer h2 {
     color: #fff;
     font-size: 20px;
@@ -17,4 +19,108 @@ footer {}
 .bottom-footer {
     height: 240px;
     background-color: #333333;
+}
+
+.top-left-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 37px;
+}
+
+.logo-footer {
+    display: flex;
+    justify-content: end;
+}
+
+.social-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer-telegram {
+    color: #ccc;
+}
+
+.footer-instagram {
+    color: #ccc;
+}
+
+.footer-twitter {
+    color: #ccc;
+}
+
+.footer-facebook {
+    color: #ccc;
+}
+
+.search-footer {
+    position: relative;
+    width: 300px;
+    height: 36px;
+}
+
+.search-input {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    background-color: #595959;
+    padding-right: 20px;
+    
+}
+
+.search-input::placeholder {
+    color: #ccc;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #ccc;
+    pointer-events: none;
+    background-color: #595959;
+    border: none;
+}
+
+.search-icon {
+    display: flex;
+    justify-content: end;
+}
+@media (max-width: 768px) {
+    .top-footer {
+        gap: 10px;
+        width: 100%;
+        flex-direction: column;
+        height: 320px;
+        justify-content: center;
+    }
+    .top-footer ul{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .top-left-footer {
+        align-items: center;
+        text-align: center;
+        padding-top: 0px;
+    }
+
+    .search-footer {
+        margin-top: 10px;
+    }
+    .bottom-footer{
+        display: flex;
+        justify-content: center;
+    }
+    .bottom-footer img{
+        margin-top: 20px;
+    }
 }

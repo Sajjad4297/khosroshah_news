@@ -3,19 +3,45 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack -p 4000",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/nextjs-registry": "^1.0.2",
+    "@ant-design/v5-patch-for-react-19": "^1.0.3",
+    "@tiptap/extension-blockquote": "^2.12.0",
+    "@tiptap/extension-bold": "^2.11.7",
+    "@tiptap/extension-bullet-list": "^2.12.0",
+    "@tiptap/extension-code-block": "^2.12.0",
+    "@tiptap/extension-color": "^2.12.0",
+    "@tiptap/extension-hard-break": "^2.12.0",
+    "@tiptap/extension-highlight": "^2.11.7",
+    "@tiptap/extension-history": "^2.11.7",
+    "@tiptap/extension-image": "^2.12.0",
+    "@tiptap/extension-link": "^2.11.7",
+    "@tiptap/extension-list-item": "^2.12.0",
+    "@tiptap/extension-ordered-list": "^2.12.0",
+    "@tiptap/extension-placeholder": "^2.11.7",
+    "@tiptap/extension-text-style": "^2.12.0",
+    "@tiptap/pm": "^2.11.7",
+    "@tiptap/react": "^2.11.7",
+    "@tiptap/starter-kit": "^2.11.7",
+    "antd": "^5.24.5",
+    "next": "15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.2.3"
+    "react-hot-toast": "^2.5.2",
+    "react-icons": "^5.5.0",
+    "react-multi-date-picker": "^4.5.2",
+    "swiper": "^11.2.6"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "22.14.0",
+    "@types/react": "19.1.0",
     "eslint": "^9",
-    "eslint-config-next": "15.2.3",
-    "@eslint/eslintrc": "^3"
+    "eslint-config-next": "15.2.3"
   }
 }
