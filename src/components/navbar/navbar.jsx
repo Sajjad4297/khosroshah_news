@@ -2,7 +2,7 @@
 import React from 'react';
 import './navbar.css';
 import Image from 'next/image';
-import logo from '@/img/LogoNavayeTabrizSiteBlu.png';
+import logo from '@/img/final-03.png';
 import Link from 'next/link';
 import { useState } from 'react';
 import NavItem from './NavItem';
@@ -125,7 +125,7 @@ export default function Navbar() {
             <Image
               src={logo}
               width={400}
-              height={130}
+              height={350}
               alt="لوگوی سایت نوای تبریز" 
               style={{ objectFit: 'contain' }}
               className="logo"

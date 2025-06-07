@@ -20,7 +20,10 @@ header {
 }
 
 .logo {
-    object-fit: cover;
+    padding-top: 10px;
+}
+.logo-side{
+    padding-top: 10px;
 }
 
 .search-box {
