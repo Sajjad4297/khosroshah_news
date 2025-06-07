@@ -171,11 +171,11 @@ export default function Navbar() {
         </div>
       </div>
       <div className={`dropdown ${isMenuOpen ? 'open' : ''}`}>
-        {link.map(item => (
+        {/* {link.map(item => (
           <Link key={`mobile-${item.text}`} href={item.href} className="dropdown-item" onClick={toggleMenu}>
             {item.text}
           </Link>
-        ))}
+        ))} */}
       
         {topics.map((topic, i) => (
           <NavItem topic={topic} key={i} onClick={isMenuOpen ? toggleMenu : undefined} />
