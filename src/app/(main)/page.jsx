@@ -30,7 +30,6 @@ export default async function Home() {
 
     const { data: news } = await getNews();
     const { data: newsByVisit } = await getNewsByVisit();
-    console.log("✅ ALL NEWS", news);
 
     const leadNews = news
         .filter(n => n.topics?.some(t => t.name === 'lead1'))
@@ -48,8 +47,8 @@ export default async function Home() {
     );
 
     const mostViewedMain = mostViewedManual.slice(0, 6);
-
-
+  
+    
 
     return (
         <div className="Home-page">

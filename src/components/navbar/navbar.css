@@ -229,17 +229,21 @@ header {
 @media (max-width: 768px) {
     .container {
         width: 100%;
+        justify-content: space-around; 
     }
 
     .logo-side {
-        width: 170px;
-        height: 50px;
+       padding-top: 0;
+        height: 100%;
     }
 
     .logo {
-        width: 170px;
+        /* width: 170px;
         height: 50px;
-        z-index: 1;
+        z-index: 1; */
+        padding-top: 0;
+        width: 150px;
+        height: 135px;
     }
 
     .search-box {
@@ -299,14 +303,6 @@ header {
     
       .mobile-search-trigger {
         display: inline-block;
-      }
-    
-      .logo-side .logo {
-        width: 200px !important; 
-      }
-    
-      .container {
-        justify-content: space-between; 
       }
     
 }

@@ -120,8 +120,7 @@ export default function Navbar() {
   return (
     <header>
       <div className='container'>
-        <div className='logo-side'>
-          <Link href="/">
+          <Link href="/" className='logo-side'>
             <Image
               src={logo}
               width={400}
@@ -132,7 +131,6 @@ export default function Navbar() {
               priority 
             />
           </Link>
-        </div>
 
        
         <div className='desktop-nav-section'> 
